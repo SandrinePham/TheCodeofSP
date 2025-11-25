@@ -1,0 +1,99 @@
+@use "../styles/univers/foundation/foundation.scss" as f;
+
+.highlight-card {
+  padding: f.$spacing-s;
+  text-align: center;
+
+  background-color: var(--background-card);
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  transition: transform var(--transition-medium),
+    box-shadow var(--transition-medium),
+    background-color var(--transition-medium), border var(--transition-medium);
+
+  @media (min-width: f.$tablet) {
+    width: 300px;
+  }
+
+  /* ===== Nombre ===== */
+  &__number {
+    font-family: var(--font-title);
+    font-size: 2.6rem;
+    font-weight: 700;
+
+    color: var(--color-header);
+
+    @media (min-width: f.$mobile) {
+      font-size: 3rem;
+    }
+  }
+
+  /* ===== Zone texte ===== */
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: f.$spacing-xs;
+      font-family: var(--font-title);
+      color: var(--primary-color);
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 0;
+      text-align: justify;
+      color: var(--color-main);
+      font-family: var(--font-body);
+      line-height: 1.45;
+    }
+  }
+
+  /* =============================
+     🎨 VARIATIONS PAR THÈME
+  ============================= */
+
+  /* 🍁 ACCUEILLANT */
+  .theme-accueillant & {
+    border: 2px solid rgba(var(--color-header-rgb), 0.15);
+
+    &:hover {
+      @include f.card-hover-accueillant;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-medium);
+    }
+  }
+
+  /* ⚡ ÉNERGIQUE */
+  .theme-energique & {
+    color: var(--light-color);
+
+    &:hover {
+      @include f.hover-card-energique;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-heavy);
+    }
+  }
+
+  /* ⚪ MINIMALISM */
+  .theme-minimalism & {
+    border: 1px solid rgba(var(--color-header-rgb), 0.12);
+
+    &__number {
+      color: var(--primary-color);
+    }
+
+    &:hover {
+      @include f.card-hover-minimalism;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-medium);
+    }
+  }
+}

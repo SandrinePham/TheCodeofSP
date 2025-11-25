@@ -1,0 +1,83 @@
+/* =============================
+   🎨 THEME — ACCUEILLANT
+   ============================= */
+.theme-accueillant {
+  /* =============================
+     ✨ Typographies
+     ============================= */
+  --font-title: "Playfair Display", serif;
+  --font-body: "Crimson Text", serif;
+  --font-subtitle: "Montserrat", sans-serif;
+
+  /* =============================
+     🎨 Couleurs principales
+     ============================= */
+  --primary-color: #6b3a0d; /* marron foncé */
+  --primary-color-rgb: 107, 58, 13;
+
+  --secondary-color: #8b4513; /* marron chaud */
+  --secondary-color-rgb: 139, 69, 19;
+
+  --tertiary-color: #ffffff;
+  --tertiary-color-rgb: 255, 255, 255;
+
+  --dark-color: black;
+  --dark-color-rgb: 0, 0, 0;
+
+  --light-color: #ffffff;
+  --light-color-rgb: 255, 255, 255;
+
+  --accent-color: #d4af37;
+  --accent-color-rgb: 205, 133, 63;
+
+  /* =============================
+     Header
+     ============================= */
+  --background-header: #f5e6d3; /* ivoire chaud */
+  --background-header-rgb: 245, 230, 211;
+
+  --color-header: #6b3a0d; /* marron foncé */
+  --color-header-rgb: 107, 58, 13;
+
+  /* =============================
+    Main
+     ============================= */
+  --background-main: #faf0e6; /* blanc coquille */
+  --background-main-rgb: 250, 240, 230;
+
+  --color-main: #8b4513; /* marron chaud */
+  --color-main-rgb: 139, 69, 19;
+
+  --background-card: #fff8f0;
+
+  /* =============================
+    Footer
+     ============================= */
+
+  --background-footer: #8b4513; /* marron chaud */
+  --background-footer-rgb: 139, 69, 19;
+
+  --color-footer: #faf0e6; /* ivoire chaud */
+  --color-footer-rgb: 245, 230, 211;
+
+  /* =============================
+     ⏳ Transitions
+     ============================= */
+  --transition-slow: 0.5s ease;
+  --transition-medium: 0.3s ease;
+  --transition-fast: 0.2s ease;
+
+  /* =============================
+     🌫️ Ombres (shadows)
+     ============================= */
+  --shadow-light: 0 2px 8px rgba(139, 69, 19, 0.1);
+  --shadow-medium: 0 4px 16px rgba(139, 69, 19, 0.15);
+  --shadow-heavy: 0 8px 32px rgba(139, 69, 19, 0.2);
+
+  /* =============================
+     🌐 Styles globaux
+     ============================= */
+  background-color: var(--background-main);
+  color: var(--color-main);
+  font-family: var(--font-body);
+}

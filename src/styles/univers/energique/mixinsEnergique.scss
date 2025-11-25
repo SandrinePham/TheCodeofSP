@@ -1,0 +1,150 @@
+/* =============================
+   ⚡️ energique Hover Effects
+============================= */
+
+/* Animation lien navbar*/
+
+/* --- Animation scintillante energique --- */
+@keyframes energique-glitter {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 4px rgba(var(--accent-color-rgb), 0.8))
+      drop-shadow(0 0 8px rgba(var(--accent-color-rgb), 0.5));
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  40% {
+    filter: drop-shadow(0 0 10px rgba(var(--accent-color-rgb), 1))
+      drop-shadow(0 0 20px rgba(var(--accent-color-rgb), 0.8));
+  }
+  60% {
+    opacity: 0.9;
+  }
+  80% {
+    filter: drop-shadow(0 0 6px rgba(var(--accent-color-rgb), 0.7))
+      drop-shadow(0 0 12px rgba(var(--accent-color-rgb), 0.5));
+  }
+}
+
+/* ⚡ Hover energique — effet néon scintillant */
+@mixin hover-energique {
+  font-weight: 700;
+  font-size: 1.05rem;
+  transform: rotate(1deg);
+  text-decoration: none;
+  color: var(--accent-color);
+  background-color: transparent;
+  border-color: var(--accent-color);
+  text-shadow: 0 0 5px var(--accent-color), 0 0 20px var(--accent-color);
+
+  /* 💥 Effet scintillant */
+  animation: energique-glitter 1.8s infinite ease-in-out alternate;
+}
+
+
+
+/* ==========================================
+   Bouton
+========================================== */
+
+@mixin btn-hover-energique {
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+  border: none;
+  transform: scale(1.05);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-heavy);
+  animation: energique-glitter 1.8s infinite ease-in-out alternate;
+}
+
+@mixin btn-active-energique {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--dark-color);
+  box-shadow: var(--shadow-heavy);
+  animation: energique-glitter 1.5s infinite alternate ease-in-out;
+}
+
+@mixin floatingSwitcher-hover-energique {
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+  border: none;
+  transform: scale(1.05);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-heavy);
+}
+
+
+/* ==========================================
+   ⚡ Mixins — Hover Effects
+========================================== */
+
+@mixin hover-card-energique {
+  box-shadow: var(--shadow-heavy);
+  border: none;
+  transition: transform var(--transition-medium);
+}
+/* =============================
+   ⚡ Hover energique léger pour tags
+============================= */
+
+/* Animation scintillante légère pour tags */
+@keyframes energique-glitter-tag {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba(var(--accent-color-rgb), 0.6))
+      drop-shadow(0 0 4px rgba(var(--accent-color-rgb), 0.3));
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  40% {
+    filter: drop-shadow(0 0 4px rgba(var(--accent-color-rgb), 0.8))
+      drop-shadow(0 0 8px rgba(var(--accent-color-rgb), 0.5));
+  }
+  60% {
+    opacity: 0.95;
+  }
+  80% {
+    filter: drop-shadow(0 0 3px rgba(var(--accent-color-rgb), 0.7))
+      drop-shadow(0 0 6px rgba(var(--accent-color-rgb), 0.4));
+  }
+}
+
+/* Mixin hover energique léger pour tags */
+@mixin hover-energique-tag {
+  color: var(--accent-color);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 0 0 2px var(--accent-color), 0 0 4px var(--accent-color);
+
+  /* Animation scintillante */
+  animation: energique-glitter-tag 1.5s infinite ease-in-out alternate;
+}
+
+/* =============================
+   ⚡ Hover energique léger pour boutons
+============================= */
+
+@mixin linearGradient-energique {
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--accent-color)
+  );
+}
+
+@mixin transistion-energique {
+  transition: transform var(--transition-medium),
+    box-shadow var(--transition-medium),
+    background-color var(--transition-medium), border var(--transition-medium);
+
+  &:hover {
+    transform: translateY(-var(--spacing-xs));
+  }
+}

@@ -1,0 +1,90 @@
+@use "../styles/univers/foundation/foundation.scss" as f;
+
+/* =============================
+   🏠 HEADER — barre de navigation principale
+============================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 900;
+  backdrop-filter: blur(10px);
+  background: var(--background-header);
+  border-bottom: 1px solid var(--primary-color);
+  transition: background var(--transition-medium),
+    border-color var(--transition-medium);
+
+  &_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 f.$spacing-m;
+  }
+
+  &_logo {
+    height: 3.5em;
+    will-change: filter;
+    transition: filter 0.3s, transform var(--transition-fast);
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+  }
+}
+
+/* === Logo optionnel global === */
+.logo {
+  height: 6em;
+  padding: f.$spacing-l;
+  will-change: filter;
+  transition: filter 0.3s, transform var(--transition-fast);
+
+  &:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+}
+
+/* === Responsive global === */
+@media (max-width: f.$mobile) {
+  .header_container {
+    gap: f.$spacing-s;
+  }
+}
+
+/* =============================
+     🎨 VARIATIONS PAR THÈME
+============================= */
+
+/* =============================
+   🍁 THEME — ACCUEILLANT
+   ============================= */
+
+.theme-accueillant .header {
+  background-color: var(--background-header);
+  border-bottom: 2px solid var(--color-main);
+}
+
+/* =============================
+   ⚡️ THEME — ENERGIQUE
+   ============================= */
+
+.theme-energique .header {
+  background-color: var(--background-header);
+  border-bottom-color: rgba(var(--color-header-rgb), 0.3);
+}
+
+/* =============================
+   ⚪ THEME — MINIMALISM
+   ============================= */
+
+.theme-minimalism .header {
+  background-color: var(--background-header);
+}

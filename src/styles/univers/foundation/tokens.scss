@@ -1,0 +1,29 @@
+@use "../accueillant/tokensAccueillant.scss" as *;
+@use "../energique/tokensEnergique.scss" as *;
+@use "../minimalism/tokensMinimalism.scss" as *;
+
+/* =============================
+     Spacing
+============================= */
+
+$spacing-xs: 0.5rem;
+$spacing-s: 1rem;
+$spacing-m: 2rem;
+$spacing-l: 3rem;
+$spacing-xl: 4rem;
+
+/* =============================
+     Breakpoints
+============================= */
+
+// Variables SCSS
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1200px;
+
+// Export en CSS variables pour :root
+:root {
+  --mobile: #{$mobile};
+  --tablet: #{$tablet};
+  --desktop: #{$desktop};
+}

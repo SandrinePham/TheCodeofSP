@@ -1,0 +1,51 @@
+/* =============================
+  ⚪ MINIMALISM - Hover Effects
+============================= */
+
+/* ⚪ Hover minimalism */
+@mixin hover-minimalism {
+  font-weight: 600;
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+@mixin tag-active-minimalism {
+  font-weight: 600;
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+
+/* ==========================================
+   Bouton
+========================================== */
+
+@mixin btn-hover-minimalism {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--light-color);
+  transform: scale(1.05);
+  transition: all var(--transition-fast);
+}
+
+@mixin btn-active-minimalism {
+  background-color: var(--accent-color);
+  color: var(--light-color);
+}
+
+@mixin card-hover-minimalism {
+  transform: scale(1.05);
+}
+
+@mixin transistion-minimalism {
+  transition: transform var(--transition-medium),
+    box-shadow var(--transition-medium),
+    background-color var(--transition-medium), border var(--transition-medium);
+
+  &:hover {
+    transform: translateY(-var(--spacing-xs));
+  }
+}
+

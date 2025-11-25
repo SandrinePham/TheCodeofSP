@@ -1,0 +1,27 @@
+@use "./styles/univers/foundation/foundation.scss" as f;
+
+/* =============================
+   📒 WRAPPER PRINCIPAL — Structure générale
+============================= */
+
+#root {
+  margin: 0 auto;
+}
+
+
+/* =============================
+     🎨 VARIATIONS PAR THÈME
+============================= */
+
+html.theme-minimalism,
+body.theme-minimalism,
+html.theme-energique,
+body.theme-energique,
+html.theme-accueillant,
+body.theme-accueillant {
+  background-color: var(--background-main);
+  color: var(--color-main);
+  color-scheme: light;
+}
+
+

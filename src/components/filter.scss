@@ -1,0 +1,177 @@
+@use "../styles/univers/foundation/foundation.scss" as f;
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  padding: f.$spacing-s 0;
+  font-family: var(--font-body);
+  color: var(--color-main);
+
+  .filter-categories {
+    display: flex;
+    flex-direction: column;
+    gap: f.$spacing-xs;
+    width: auto;
+
+    .filter-category {
+      flex: 1;
+      min-width: 220px;
+      border-radius: 8px;
+      transition: box-shadow var(--transition-medium),
+        background var(--transition-medium);
+
+      &:hover {
+        box-shadow: var(--shadow-heavy);
+      }
+
+      .category-title {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        font-family: var(--font-title);
+        color: var(--primary-color);
+        gap: f.$spacing-xs;
+        padding: 0 f.$spacing-xs;
+        background-color: var(--background-main);
+        border: none;
+
+        .arrow {
+          transition: transform var(--transition-medium);
+          &.open {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: f.$spacing-xs;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height var(--transition-medium),
+          opacity var(--transition-medium), padding var(--transition-medium);
+
+        &.open {
+          max-height: 500px;
+          opacity: 1;
+          padding: f.$spacing-xs;
+          will-change: transform, opacity;
+        }
+
+        .tag {
+          padding: 0.1rem 0.5rem;
+          border-radius: 12px;
+          font-size: 0.85rem;
+          cursor: pointer;
+          border: transparent 2px solid;
+          transition: background-color var(--transition-fast),
+            color var(--transition-fast), transform var(--transition-fast);
+
+          
+        }
+      }
+    }
+  }
+
+  .filter-actions {
+    display: flex;
+    align-items: center;
+    gap: f.$spacing-s;
+    margin-top: f.$spacing-s;
+
+    .reset-filters {
+      padding: f.$spacing-xs f.$spacing-s;
+      border-radius: 6px;
+      background: var(--primary-color);
+      box-shadow: var(--shadow-medium);
+      cursor: pointer;
+      font-family: var(--font-subtitle);
+      border: none;
+      transition: background-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+    }
+
+    .projects-count {
+      font-size: 0.9rem;
+      color: var(--color-main);
+      font-weight: 500;
+    }
+  }
+
+  /* =============================
+     Thèmes
+  ============================= */
+
+  .theme-accueillant & {
+    .tag {
+      background: var(--primary-color);
+      color: var(--background-main);
+      border-color: var(--primary-color);
+      &:hover {
+        @include f.btn-hover-accueillant;
+      }
+      &--active {
+        @include f.btn-active-accueillant;
+      }
+    }
+
+    .reset-filters {
+      color: var(--light-color);
+      &:hover {
+        @include f.btn-hover-accueillant;
+      }
+    }
+  }
+
+  .theme-energique & {
+    .checkbox-group .tag {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      color: var(--primary-color);
+      text-transform: none;
+      transition: color var(--transition-fast), transform var(--transition-fast);
+      &:hover {
+        @include f.hover-energique-tag;
+      }
+      &--active {
+        @include f.hover-energique-tag;
+      }
+    }
+
+    .reset-filters {
+      color: var(--dark-color);
+      &:hover {
+        @include f.btn-hover-energique;
+      }
+    }
+    .projects-count {
+      color: var(--primary-color);
+    }
+  }
+
+  .theme-minimalism & {
+    .tag {
+      background: var(--color-main);
+      color: var(--light-color);
+      &:hover {
+        @include f.btn-hover-minimalism;
+      }
+      &--active {
+        @include f.btn-active-minimalism;
+      }
+    }
+
+    .reset-filters {
+      background: var(--color-main);
+      color: var(--light-color);
+      &:hover {
+        @include f.btn-hover-minimalism;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@forward "../energique/mixinsEnergique.scss";
+@forward "../accueillant/mixinsAccueillant.scss";
+@forward "../minimalism/mixinsMinimalism.scss";
+
+/* =====================================
+   🔹 Animations globales
+===================================== */
+
+@mixin transistion {
+  transition: transform var(--transition-medium),
+    box-shadow var(--transition-medium),
+    background-color var(--transition-medium), border var(--transition-medium);
+
+  &:hover {
+    transform: translateY(v.$spacing-xs);
+  }
+}

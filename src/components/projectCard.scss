@@ -1,0 +1,293 @@
+@use "../styles/univers/foundation/foundation.scss" as f;
+
+/* =============================
+   💼 PROJECT CARD - Structure générale
+   ============================= */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 350px;
+  height: 100%;
+  min-height: 420px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  /* =============================
+     🖼️ Image du projet
+     ============================= */
+  &__image {
+    position: relative;
+    height: 7.5rem;
+    overflow: hidden;
+    border-radius: 6px 6px 0 0;
+
+    img {
+      width: 350px;
+      height: 200px;
+      object-fit: fill;
+      transition: transform var(--transition-medium);
+      will-change: transform;
+      overflow: hidden;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  /* =============================
+     🧾 Contenu
+     ============================= */
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: f.$spacing-xs f.$spacing-s;
+    text-align: left;
+  }
+
+  &__title {
+    font-size: 1.3rem;
+    margin-bottom: f.$spacing-xs;
+    font-family: var(--font-title);
+  }
+
+  &__description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-height: 4.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+    text-align: justify;
+
+    &.full {
+      max-height: none;
+    }
+  }
+
+  .show-more {
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 0 0 f.$spacing-s;
+    font-family: var(--font-subtitle);
+    color: var(--accent-color);
+    text-align: left;
+    transition: color var(--transition-fast);
+  }
+
+  /* =============================
+     🧩 Technologies
+     ============================= */
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: f.$spacing-xs;
+
+    .tech-tag {
+      padding: 0.1rem 0.2rem;
+      border-radius: 12px;
+      font-family: var(--font-subtitle);
+      font-size: 0.6rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+    }
+  }
+
+  /* =============================
+     🔗 Boutons d’action
+     ============================= */
+  &__actions {
+    display: flex;
+    gap: f.$spacing-xs;
+    flex-wrap: wrap;
+    padding-top: f.$spacing-s;
+
+    @media (max-width: f.$mobile) {
+      flex-direction: column;
+    }
+
+    a.btn {
+      flex: 1;
+      text-align: center;
+      border-radius: 6px;
+      padding: 0.2rem 0;
+      font-family: var(--font-subtitle);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      border: 1px solid transparent;
+      transition: background-color var(--transition-fast),
+        color var(--transition-fast), border var(--transition-fast);
+    }
+  }
+}
+
+/* =============================
+   🧱 Grille de projets
+   ============================= */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: f.$spacing-l;
+  margin-top: f.$spacing-m;
+}
+
+/* =============================
+     🎨 VARIATIONS PAR THÈME
+============================= */
+
+/* =============================
+   🍁 THEME — ACCUEILLANT
+   ============================= */
+
+.theme-accueillant {
+  .project-card {
+    background-color: var(--background-card);
+    color: var(--color-main);
+    box-shadow: var(--shadow-light);
+    border: 2px solid rgba(var(--primary-color-rgb), 0.2);
+
+    &:hover {
+      @include f.card-hover-accueillant;
+    }
+
+    &__title {
+      color: var(--primary-color);
+    }
+    &__description {
+      color: var(--color-main);
+    }
+
+    .tech-tag {
+      background-color: var(--color-main);
+      color: var(--background-main);
+    }
+
+    a.btn--secondary {
+      background-color: var(--secondary-color);
+      color: var(--background-main);
+      &:hover {
+        @include f.btn-hover-accueillant;
+      }
+    }
+
+    a.btn--outline {
+      color: var(--color-main);
+      border-color: var(--color-main);
+      &:hover {
+        @include f.btn-hover-accueillant;
+      }
+    }
+  }
+  .show-more {
+    &:hover {
+      @include f.tag-hover-accueillant;
+    }
+  }
+}
+
+/* =============================
+   ⚡️ THEME — ENERGIQUE
+   ============================= */
+
+.theme-energique {
+  .project-card {
+    background-color: var(--background-header);
+    box-shadow: var(--shadow-light);
+    color: var(--primary-color);
+
+    @include f.transistion-energique;
+
+    &:hover {
+      @include f.hover-card-energique;
+    }
+
+    &__title {
+      color: var(--primary-color);
+    }
+    &__description {
+      color: var(--color-main);
+    }
+
+    .tech-tag {
+      background-color: var(--background-header);
+      color: var(--primary-color);
+    }
+
+    a.btn--secondary {
+      color: var(--background-header);
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+
+      &:hover {
+        @include f.btn-hover-energique;
+      }
+    }
+    a.btn--outline {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      &:hover {
+        @include f.btn-hover-energique;
+      }
+    }
+  }
+  .show-more {
+    color: var(--color-main);
+    &:hover {
+      @include f.hover-energique-tag;
+    }
+  }
+}
+
+/* =============================
+   ⚪ THEME — MINIMALISM
+   ============================= */
+
+.theme-minimalism {
+  .project-card {
+    background-color: var(--background-header);
+    border: 1px solid rgba(var(--color-header-rgb), 0.1);
+    color: var(--color-main);
+    box-shadow: var(--shadow-light);
+
+    @include f.transistion-minimalism;
+
+    &:hover {
+      @include f.card-hover-minimalism;
+    }
+
+    &__title {
+      color: var(--primary-color);
+    }
+    &__description {
+      color: var(--color-main);
+    }
+
+    .tech-tag {
+      background-color: rgba(var(--secondary-color-rgb), 0.05);
+      border-color: rgba(var(--secondary-color-rgb), 0.3);
+      color: var(--color-main);
+    }
+
+    a.btn--secondary {
+      background-color: var(--primary-color);
+      color: var(--light-color);
+      &:hover {
+        @include f.btn-hover-minimalism;
+      }
+    }
+
+    a.btn--outline {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      &:hover {
+        @include f.btn-hover-minimalism;
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@use "../styles/univers/foundation/foundation.scss" as f;
+
+/* ===============================
+   🎬 Conteneur principal
+================================ */
+.slogan-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   ✨ Titre principal
+================================ */
+.slogan-title {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  font-family: var(--font-title);
+
+  @media (max-width: f.$mobile) {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===============================
+   🎨 Variations selon le thème
+================================ */
+
+/* 🍁 Accueillant */
+.theme-accueillant .slogan-title {
+  color: var(--color-header);
+}
+
+/* ⚡ Energique */
+.theme-energique .slogan-title {
+  font-family: "Orbitron", sans-serif;
+  color: var(--accent-color);
+  text-shadow: 0 0 5px var(--accent-color), 0 0 12px var(--accent-color);
+}
+
+/* ⚪ Minimalism */
+.theme-minimalism .slogan-title {
+  font-family: var(--font-body);
+  color: var(--color-header);
+  animation: fade-in-letters 1s ease forwards;
+}
+
+/* ===============================
+   🔤 Animations globales
+================================ */
+@keyframes fade-in-letters {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   ⏳ States
+================================ */
+.slogan__loading,
+.slogan__error {
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0.8;
+  font-family: var(--font-body);
+}

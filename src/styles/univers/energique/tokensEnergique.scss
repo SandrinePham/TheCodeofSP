@@ -1,0 +1,89 @@
+/* =============================
+   ⚡️ THEME — ENERGIQUE
+   ============================= */
+
+.theme-energique {
+  /* =============================
+     ✨ Typographies
+     ============================= */
+
+  --font-title: "Share Tech Mono", monospace; /* style console */
+  --font-body: "Rajdhani", sans-serif; /* lisible */
+  --font-subtitle: "Orbitron", sans-serif; /* techno/futuriste */
+
+  /* =============================
+     🎨 Couleurs principales
+     ============================= */
+  --primary-color: #00ff08; /* vert électrique */
+  --primary-color-rgb: 0, 255, 8;
+
+  --secondary-color: black;
+  --secondary-color-rgb: 0, 0, 0;
+
+  --tertiary-color: #e0e0e0; /* texte clair */
+  --tertiary-color-rgb: 224, 224, 224;
+
+  --accent-color: #ffea00; /* jaune néon */
+  --accent-color-rgb: 255, 234, 0;
+
+  --dark-color: black;
+  --dark-color-rgb: 0, 0, 0;
+
+  --light-color: #e0e0e0; /* texte clair */
+  --light-color-rgb: 224, 224, 224;
+
+  --text-accent: #ff4d6d; /* texte important rose flashy */
+  --text-accent-rgb: 255, 77, 109;
+
+  /* =============================
+       Header
+       ============================= */
+  --background-header: #1a103d; /* panneau secondaire */
+  --background-header-rgb: 26, 16, 61;
+
+  --color-header: #00ff08; /* vert électrique */
+  --color-header-rgb: 0, 255, 8;
+
+  /* =============================
+    Main
+     ============================= */
+
+  --background-main: #0d0221; /* noir profond */
+  --background-main-rgb: 13, 2, 33;
+
+  --color-main: #e0e0e0; /* vert électrique */
+  --color-main-rgb: 0, 255, 0;
+
+  --background-card:#1a103d;
+
+  /* =============================
+      Footer
+       ============================= */
+
+  --background-footer: #1a103d; /* panneau secondaire */
+  --background-footer-rgb: 26, 16, 61;
+
+  --color-footer: #e0e0e0;
+  --color-footer-rgb: 0, 255, 8;
+
+  /* =============================
+     ⏳ Transitions
+     ============================= */
+  --transition-slow: 0.5s ease-in-out;
+  --transition-medium: 0.3s ease-in-out;
+  --transition-fast: 0.2s ease-in-out;
+
+  /* =============================
+     🌫️ Ombres néon
+     ============================= */
+  --shadow-light: 0 2px 8px rgba(255, 0, 255, 0.3);
+  --shadow-medium: 0 4px 16px rgba(0, 255, 8, 0.3);
+  --shadow-heavy: 0 8px 32px rgba(255, 234, 0, 0.3);
+
+  /* =============================
+     🌐 Styles globaux
+     ============================= */
+  background-color: var(--background-main);
+  color: var(--color-main);
+  font-family: var(--font-body);
+}

@@ -1,0 +1,211 @@
+@use "./styles/univers/foundation/foundation.scss" as f;
+
+/* =============================
+   📒 MAIN — Structure générale
+============================= */
+
+/* =====================================
+   🔹 Reset et typographie globale
+===================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-body), system-ui, Avenir, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-main);
+  background: var(--background-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  min-width: 320px;
+  transition: background-color var(--transition-medium),
+    color var(--transition-medium);
+  color-scheme: light;
+}
+
+/* =====================================
+   🔹 Titres principaux universels
+===================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  color: var(--primary-color);
+  transition: color var(--transition-medium);
+}
+
+@media (max-width: f.$mobile) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.header-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2;
+  position: relative;
+  margin-bottom: f.$spacing-s;
+
+  @media (max-width: f.$mobile) {
+    font-size: 1.5rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--color-main), var(--accent-color));
+  }
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  margin-bottom: f.$spacing-s;
+
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(
+      to right,
+      var(--primary-color),
+      var(--accent-color)
+    )
+    1;
+  color: var(--primary-color);
+}
+
+.page-title-small {
+  @extend .page-title;
+  font-size: 1.5rem;
+
+  @media (max-width: f.$mobile) {
+    font-size: 1.2rem;
+  }
+
+  &::after {
+    width: 40px;
+    height: 2px;
+  }
+}
+
+p {
+  font-family: var(--font-body);
+  color: var(--color-main);
+  margin-bottom: f.$spacing-s;
+}
+
+/* =====================================
+   🔹 Conteneurs globaux
+===================================== */
+main {
+  padding: 50px 10px 20px 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--background-main);
+
+  @media (max-width: f.$tablet) {
+    padding: 50px 5px 20px 5px;
+  }
+
+  @media (max-width: f.$mobile) {
+    padding: 50px 5px 20px 5px;
+  }
+}
+
+/* --- Sections universelles --- */
+section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: f.$spacing-s;
+}
+
+/* --- Variante section en “ligne” (pour les présentations type home__presentation) --- */
+.section--row {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: f.$spacing-m;
+  padding: 0 0 f.$spacing-xs 0;
+
+  @media (max-width: f.$tablet) {
+    flex-wrap: wrap;
+  }
+}
+
+/* --- Variante “grille” (pour les highlights, portfolios, etc.) --- */
+.section--grid {
+  display: grid;
+  justify-items: center;
+  align-items: stretch;
+  width: 100%;
+  gap: f.$spacing-m;
+}
+
+/* =====================================
+   🔹 Mode clair automatique
+===================================== */
+
+/* =====================================
+   🚫 Désactivation du mode sombre automatique
+   pour les thèmes personnalisés
+===================================== */
+
+/* =============================
+   ⚡️ THEME — ENERGIQUE
+   ============================= */
+
+.theme-energique {
+  .page-title {
+    &::after {
+      @include f.linearGradient-energique;
+    }
+  }
+  .section-title {
+    border-image: linear-gradient(
+        to right,
+        var(--primary-color),
+        var(--accent-color)
+      )
+      1;
+  }
+}
+
+.theme-minimalism {
+body{
+  background: var(--background-main);
+}
+}

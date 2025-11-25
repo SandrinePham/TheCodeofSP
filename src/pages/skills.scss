@@ -1,0 +1,251 @@
+@use "../styles/univers/foundation/foundation.scss" as f;
+
+/* =============================
+   📄 SKILLS — Structure générale
+============================= */
+
+.skills {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: f.$spacing-m;
+
+  &__header {
+    text-align: center;
+    margin-bottom: f.$spacing-s;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: f.$spacing-m;
+  }
+
+  &__section {
+    width: 100%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: f.$spacing-s;
+  }
+
+  &__tools,
+  &__methodologies,
+  &__diplomas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: f.$spacing-m;
+    justify-content: center;
+  }
+
+  &__item,
+  &__tool,
+  &__methodology,
+  &__diploma {
+    flex: 1 1 280px;
+    max-width: 350px;
+    padding: f.$spacing-s;
+    border-radius: 8px;
+    box-shadow: var(--shadow-heavy);
+    background: var(--light-color);
+    text-align: center;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+      box-shadow 0.3s ease;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:hover {
+      box-shadow: var(--shadow-medium);
+    }
+  }
+
+  &__item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: f.$spacing-xs;
+  }
+
+  &__item-name {
+    font-family: var(--font-subtitle);
+    font-weight: 500;
+    color: var(--primary-color);
+  }
+  &__item-level {
+    font-family: var(--font-subtitle);
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  &__item-bar {
+    height: 8px;
+    background: rgba(139, 69, 19, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  &__item-progress {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--primary-color),
+      var(--accent-color)
+    );
+    transition: width 1s ease;
+  }
+
+  &__diploma {
+    text-align: left;
+  }
+
+  &__diploma-header {
+    display: flex;
+    gap: f.$spacing-m;
+    margin-bottom: f.$spacing-xs;
+    align-items: center;
+  }
+  &__diploma-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+  }
+  &__diploma-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  &__diploma-logo {
+    width: 80px;
+    height: auto;
+    display: block;
+  }
+  &__diploma-institution,
+  &__diploma-location,
+  &__diploma-qualification {
+    margin: 0.4rem 0;
+    color: var(--color-main);
+    text-underline-offset: 2px;
+    text-align: justify;
+  }
+  &__diploma-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+  }
+  &__diploma-skills li {
+    background: var(--secondary-color);
+    color: var(--background-main);
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+  }
+  &__diploma-year {
+    font-weight: 600;
+    color: var(--primary-color);
+    display: block;
+  }
+}
+
+/* =============================
+     🎨 VARIATIONS PAR THÈME
+============================= */
+
+/* =============================
+   🍁 THEME — ACCUEILLANT
+============================= */
+
+.theme-accueillant {
+  .skills {
+    &__item,
+    &__tool,
+    &__methodology,
+    &__diploma {
+      background-color: var(--background-card);
+      &:hover {
+        @include f.card-hover-accueillant;
+      }
+    }
+  }
+}
+
+/* =============================
+   ⚡️ THEME — ENERGIQUE
+============================= */
+
+.theme-energique {
+  .skills {
+    &__item,
+    &__tool,
+    &__methodology,
+    &__diploma {
+      &:hover {
+        @include f.hover-card-energique;
+      }
+      background-color: var(--background-header);
+      box-shadow: var(--shadow-medium);
+      font-family: var(--font-subtitle);
+    }
+
+    &__item-progress {
+      background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--accent-color)
+      );
+    }
+
+    &__item-name {
+      color: var(--color-main);
+    }
+
+    &__item-level {
+      color: var(--accent-color);
+      @include f.hover-energique-tag;
+    }
+
+    &__diploma-icon {
+      @include f.hover-energique-tag;
+    }
+
+    &__diploma-skills li {
+      color: var(--color-main);
+    }
+  }
+}
+
+/* =============================
+   ⚪ THEME — MINIMALISM
+============================= */
+
+.theme-minimalism {
+  .skill {
+    &__item,
+    &__tool,
+    &__methodology,
+    &__diploma {
+      box-shadow: var(--shadow-heavy);
+      &:hover {
+        @include f.card-hover-minimalism;
+      }
+    }
+    &__item-name {
+      color: var(--dark-color);
+    }
+    &__item-progress {
+      background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--accent-color)
+      );
+    }
+  }
+}

@@ -1,0 +1,256 @@
+@use "../styles/univers/foundation/foundation.scss" as f;
+
+/* =============================
+   🦶 FOOTER — Structure générale
+============================= */
+.footer {
+  position: relative;
+  box-sizing: border-box;
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
+  z-index: 50;
+  padding: f.$spacing-l 0;
+  transition: background-color var(--transition-medium),
+    color var(--transition-medium);
+
+  @media (max-width: f.$mobile) {
+    padding: f.$spacing-s 0;
+  }
+
+  /* --- Séparation visuelle en haut (dégradé dynamique) --- */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(
+      to right,
+      var(--accent-color),
+      var(--secondary-color)
+    );
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 f.$spacing-m;
+  }
+
+  /* --- Titres et description --- */
+  &__title {
+    font-size: 1.6rem;
+    margin-bottom: f.$spacing-xs;
+    color: var(--tertiary-color);
+    font-family: var(--font-title);
+  }
+
+  &__description {
+    font-size: 1rem;
+    color: var(--tertiary-color);
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--font-body);
+  }
+
+  &__subtitle {
+    color: var(--background-main);
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+
+    @media (max-width: f.$mobile) {
+      margin-bottom: 0;
+    }
+  }
+
+  /* --- Contenu principal --- */
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: f.$spacing-m;
+
+    @media (min-width: f.$mobile) {
+      flex-direction: row;
+      justify-content: center;
+      gap: f.$spacing-s;
+    }
+  }
+
+  /* --- Sections --- */
+  &__section {
+    width: 100%;
+    max-width: 300px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: f.$spacing-xs;
+        justify-content: center;
+
+        svg {
+          font-size: 1rem;
+          color: var(--accent-color);
+          transition: color var(--transition-fast);
+        }
+
+        a {
+          color: var(--color-footer);
+          text-decoration: none;
+          transition: color var(--transition-fast);
+          font-size: 1.4rem;
+
+          &:hover {
+            color: var(--accent-color);
+          }
+        }
+      }
+    }
+  }
+
+  /* --- Icônes sociales --- */
+  &__icons {
+    display: flex;
+    gap: f.$spacing-m;
+    justify-content: center;
+
+    a {
+      font-size: 1.4rem;
+      transition: transform var(--transition-medium),
+        color var(--transition-medium);
+      color: var(--tertiary-color);
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  /* --- Droits et mentions --- */
+  &__rights {
+    margin-top: f.$spacing-s;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    text-align: center;
+    font-family: var(--font-subtitle);
+    color: var(--color-footer);
+    @media (max-width: f.$mobile) {
+      margin-top: 0;
+    }
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: f.$mobile) {
+    &__content {
+      flex-direction: column;
+      text-align: center;
+      gap: f.$spacing-s;
+    }
+  }
+
+  /* =============================
+     🎨 VARIATIONS PAR THÈME
+============================= */
+
+  /* =============================
+   🍁 THEME — ACCUEILLANT
+   ============================= */
+
+  .theme-accueillant & {
+    background-color: var(--background-footer);
+    color: var(--color-footer);
+
+    &__title,
+    &__description {
+      color: var(--color-footer);
+    }
+
+    &__section ul li a {
+      color: var(--color-footer);
+
+      &:hover {
+        @include f.tag-hover-accueillant;
+      }
+    }
+
+    &__icons a {
+      color: var(--color-footer);
+      &:hover {
+        @include f.tag-hover-accueillant;
+      }
+    }
+  }
+
+  /* =============================
+   ⚡️ THEME — ENERGIQUE
+   ============================= */
+
+  .theme-energique & {
+    background-color: var(--background-footer);
+    color: var(--tertiary-color);
+
+    &::before {
+      @include f.linearGradient-energique;
+    }
+
+    &__title,
+    &__subtitle {
+      color: var(--primary-color);
+    }
+
+    &__section ul li a,
+    &__icons a {
+      color: var(--tertiary-color);
+      &:hover {
+        @include f.hover-energique-tag;
+      }
+    }
+  }
+
+  /* =============================
+   ⚪ THEME — MINIMALISM
+   ============================= */
+
+  .theme-minimalism & {
+    background-color: var(--background-footer);
+    color: var(--color-footer);
+
+    &__title,
+    &__description {
+      color: var(--accent-footer);
+    }
+
+    &__subtitle {
+      text-decoration: underline;
+    }
+
+    &__section ul li a {
+      color: var(--color-footer);
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+
+    &__icons a {
+      color: var(--color-footer);
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+}

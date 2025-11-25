@@ -1,0 +1,234 @@
+@use "../styles/univers/foundation/foundation.scss" as f;
+
+/* =====================
+   Navbar principale
+===================== */
+.navbar {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: f.$spacing-l;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - f.$spacing-l);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 998;
+  }
+
+  &.nav--open::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* =====================
+   Liste de navigation
+===================== */
+.nav_list {
+  display: flex;
+  gap: f.$spacing-l;
+  list-style: none;
+  font-family: var(--font-title);
+
+  @media (max-width: f.$tablet) {
+    position: fixed;
+    gap: f.$spacing-xs;
+    top: f.$spacing-xl;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - f.$spacing-xl);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: f.$spacing-xs;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 999;
+
+    li {
+      opacity: 0;
+      transform: translateY(f.$spacing-xs);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  }
+}
+
+.nav--open .nav_list {
+  @media (max-width: f.$tablet) {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+
+    li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* =====================
+   Nav links
+===================== */
+.nav_link {
+  text-decoration: none;
+  font-weight: 500;
+  padding: f.$spacing-xs;
+  display: block;
+  position: relative;
+  transition: all var(--transition-fast);
+  color: var(--primary-color);
+}
+
+/* =====================
+   Burger button
+===================== */
+.burger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  z-index: 1001;
+
+  @media (max-width: f.$tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-burger,
+  .icon-close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    transition: opacity 0.3s ease;
+    color: var(--color-header);
+  }
+
+  .icon-burger {
+    opacity: 1;
+  }
+  .icon-close {
+    opacity: 0;
+  }
+
+  &.open {
+    .icon-burger {
+      opacity: 0;
+    }
+    .icon-close {
+      opacity: 1;
+    }
+  }
+}
+
+/* =============================
+   🎨 VARIATIONS PAR THÈME
+============================= */
+
+/* =============================
+   🍁 THEME — ACCUEILLANT
+============================= */
+.theme-accueillant {
+  .nav_link {
+    color: var(--dark-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color, var(--color-header));
+      transition: width var(--transition-fast), left var(--transition-fast);
+      transform: translateX(-50%);
+    }
+
+    &:hover,
+    &.active {
+      @include f.hover-accueillant;
+    }
+  }
+
+  .nav_list {
+    @media (max-width: f.$tablet) {
+      background-color: rgba(var(--background-header-rgb), 0.95);
+    }
+  }
+}
+
+/* =============================
+   ⚡️ THEME — ENERGIQUE
+============================= */
+.theme-energique {
+  .nav_link {
+    color: var(--color-header);
+    text-shadow: 0 0 5px var(--color-header), 0 0 10px var(--color-header);
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color, var(--color-header));
+      transition: width var(--transition-fast), left var(--transition-fast);
+      transform: translateX(-50%);
+    }
+
+    &:hover,
+    &.active {
+      @include f.hover-energique;
+    }
+  }
+
+  .nav_list {
+    @media (max-width: f.$tablet) {
+      background-color: rgba(var(--background-header-rgb), 0.95);
+      backdrop-filter: blur(5px);
+    }
+  }
+}
+
+/* =============================
+   ⚪ THEME — MINIMALISM
+============================= */
+.theme-minimalism {
+  .nav_link {
+    color: var(--primary-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color, var(--color-header));
+      transition: width var(--transition-fast), left var(--transition-fast);
+      transform: translateX(-50%);
+    }
+
+    &:hover,
+    &.active {
+      @include f.tag-active-minimalism;
+    }
+  }
+
+  .nav_list {
+    @media (max-width: f.$tablet) {
+      background-color: rgba(var(--background-header-rgb), 0.95);
+    }
+  }
+}

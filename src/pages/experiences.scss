@@ -1,0 +1,203 @@
+@use "../styles/univers/foundation/foundation.scss" as f;
+
+/* =============================
+   📄 EXPERIENCES — Structure générale
+============================= */
+
+.experience {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    text-align: center;
+    margin-bottom: f.$spacing-s;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: f.$spacing-m;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 300px;
+    max-width: 350px;
+    height: 100%;
+    min-height: 300px;
+    padding: f.$spacing-s;
+    border-radius: 8px;
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+      box-shadow 0.3s ease;
+
+    border-left: none;
+    background: var(--background-card);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        var(--primary-color),
+        var(--accent-color)
+      );
+      border-radius: 8px 0 0 8px;
+    }
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &-title {
+      font-size: 1.25rem;
+      margin-bottom: f.$spacing-xs;
+    }
+
+    &-company-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: f.$spacing-s;
+    }
+
+    &-logo {
+      width: 60px;
+      height: auto;
+      display: block;
+    }
+
+    &-period {
+      font-family: var(--font-subtitle);
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-bottom: f.$spacing-s;
+      display: block;
+    }
+
+    &-tasks {
+      flex: 1;
+      padding-left: 1.2rem;
+      margin: 0;
+      overflow: hidden;
+      li {
+        list-style-type: disc;
+        margin-bottom: f.$spacing-xs;
+        font-family: var(--font-subtitle);
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+/* =============================
+   Lien company dans les cartes
+============================= */
+.experience__card-company a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-family: inherit;
+  font-weight: inherit;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+  text-align: left;
+
+  &:hover {
+    color: var(--accent-color);
+    text-decoration-color: var(--accent-color);
+  }
+
+  &:visited {
+    color: inherit;
+    text-decoration-color: inherit;
+  }
+}
+
+/* =============================
+     🎨 VARIATIONS PAR THÈME
+============================= */
+
+/* =============================
+   🍁 THEME — ACCUEILLANT
+   ============================= */
+
+.theme-accueillant {
+  .experience {
+    &__card {
+      box-shadow: var(--shadow-heavy);
+      &-title {
+        color: var(--color-main);
+      }
+      &-company,
+      &-period,
+      &-tasks li {
+        color: var(--secondary-color);
+      }
+      &:hover {
+        @include f.card-hover-accueillant;
+      }
+    }
+  }
+}
+
+/* =============================
+   ⚡️ THEME — ENERGIQUE
+   ============================= */
+
+.theme-energique {
+  .experience {
+    &__card {
+      &::before {
+        background: linear-gradient(
+          to top,
+          var(--accent-color) 40%,
+          var(--primary-color) 100%
+        );
+      }
+
+      &-period {
+        color: var(--color-main);
+      }
+      &:hover {
+        @include f.hover-card-energique;
+      }
+    }
+  }
+}
+
+/* =============================
+   ⚪ THEME — MINIMALISM
+   ============================= */
+
+.theme-minimalism {
+  .experience {
+    &__card {
+      box-shadow: var(--shadow-heavy);
+      &-title,
+      &-company {
+        color: var(--second-accent-color);
+      }
+
+      &-period,
+      &-tasks li {
+        color: var(--color-main);
+      }
+      &:hover {
+        @include f.card-hover-minimalism;
+      }
+    }
+  }
+}

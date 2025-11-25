@@ -1,0 +1,72 @@
+@use "../styles/univers/foundation/foundation.scss" as f;
+
+/* =============================
+   📄 PROJECTS — Structure générale
+============================= */
+
+.projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    text-align: center;
+    margin-bottom: f.$spacing-s;
+  }
+
+  &__filters {
+    width: 100%;
+  }
+
+  &__list {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: f.$spacing-m;
+
+    .projects__card-container {
+      flex: 1 1 280px;
+      max-width: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: f.$tablet) {
+  .projects {
+    &__header {
+      .page-title {
+        font-size: 2rem;
+      }
+      .page-subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    &__list {
+      gap: f.$spacing-s;
+    }
+  }
+}
+
+/* =============================
+     🎨 VARIATIONS PAR THÈME
+============================= */
+
+/* =============================
+   🍁 THEME — accueillant
+   ============================= */
+
+/* =============================
+   ⚡️ THEME — ENERGIQUE
+   ============================= */
+
+/* =============================
+   ⚪ THEME — MINIMALISM
+   ============================= */

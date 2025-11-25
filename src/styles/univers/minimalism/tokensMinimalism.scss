@@ -1,0 +1,100 @@
+/* =============================
+   🩶 THEME — MINIMALISM
+   ============================= */
+.theme-minimalism {
+  /* =============================
+     ✨ Typographies
+     ============================= */
+  --font-title: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-subtitle: "Poppins", sans-serif;
+
+  /* =============================
+     🎨 Couleurs principales
+     ============================= */
+  --primary-color: #000000;
+  --primary-color-rgb: 0, 0, 0;
+
+  --secondary-color: #ffffff;
+  --secondary-color-rgb: 255, 255, 255;
+
+  --tertiary-color: #555555;
+  --tertiary-color-rgb: 85, 85, 85;
+
+  --accent-color: #2f6bff;
+  --accent-color-rgb: 47, 107, 255;
+
+  --second-accent-color: #1f64b3;
+  --second-accent-color-rgb: 31, 100, 179;
+
+  --dark-color: #000000;
+  --dark-color-rgb: 0, 0, 0;
+
+  --light-color: #ffffff;
+  --light-color-rgb: 255, 255, 255;
+
+  /* =============================
+     Header
+     ============================= */
+  --background-header: #ffffff;
+  --background-header-rgb: 255, 255, 255;
+
+  --color-header: #000000;
+  --color-header-rgb: 0, 0, 0;
+
+  /* =============================
+     Main (clair par défaut)
+     ============================= */
+  --background-main: linear-gradient(
+    to bottom,
+    #ffffff 20%,
+    #dde1e4 50%,
+    #000000 100%
+  );
+  --background-main-rgb: 247, 240, 240;
+
+  --color-main: #555555;
+  --color-main-rgb: 85, 85, 85;
+
+  --background-card: #f5f5f5;
+
+  /* === Version explicite claire === */
+  --background-main-light: #ffffff;
+  --color-main-light: #000000;
+
+  /* === Version explicite sombre === */
+  --background-main-dark: #000000;
+
+  --color-main-dark: #ffffff;
+
+  /* =============================
+     Footer
+     ============================= */
+  --background-footer: #000000;
+  --background-footer-rgb: 0, 0, 0;
+
+  --color-footer: #ffffff;
+  --color-footer-rgb: 255, 255, 255;
+
+  /* =============================
+     ⏳ Transitions
+     ============================= */
+  --transition-slow: 0.4s ease-in-out;
+  --transition-medium: 0.25s ease-in-out;
+  --transition-fast: 0.15s ease-in-out;
+
+  /* =============================
+     🌫️ Ombres légères
+     ============================= */
+  --shadow-light: 0 1px 4px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-heavy: 0 12px 40px rgba(0, 0, 0, 0.35);
+
+  /* =============================
+     🌐 Styles globaux
+     ============================= */
+  background-color: var(--background-main-light);
+  color: var(--color-main-light);
+  font-family: var(--font-body);
+  color-scheme: light;
+}

@@ -1,0 +1,50 @@
+/* =============================
+  🍁 ACCUEILLANT - Hover Effects
+============================= */
+
+/* 🌈 Hover générique pour lien accueillant */
+@mixin hover-accueillant {
+  color: var(--color-header);
+  font-weight: 700;
+  &::before {
+    width: 80%;
+  }
+}
+
+@mixin tag-hover-accueillant {
+  color: var(--accent-color);
+  font-weight: bolder;
+}
+
+/* ==========================================
+   Bouton
+========================================== */
+
+@mixin btn-hover-accueillant {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  transform: scale(1.05);
+  transition: all var(--transition-fast);
+  border: none;
+  color: var(--secondary-color);
+}
+
+@mixin btn-active-accueillant {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+@mixin card-hover-accueillant {
+  box-shadow: var(--shadow-heavy);
+  transform: translateY(-4px);
+}
+
+@mixin transistion-accueillant {
+  transition: transform var(--transition-medium),
+    box-shadow var(--transition-medium),
+    background-color var(--transition-medium), border var(--transition-medium);
+
+  &:hover {
+    transform: translateY(-$spacing-xs);
+  }
+}

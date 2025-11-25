@@ -1,0 +1,38 @@
+  @keyframes fly-in {
+    0% {
+      transform: scale(0.5) rotate(-20deg) translateY(-500px);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1) rotate(10deg) translateY(-50px);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotate(0deg) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fly-out {
+    0% {
+      transform: scale(1) rotate(0deg) translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1) rotate(-10deg) translateY(50px);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5) rotate(-20deg) translateY(-500px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
