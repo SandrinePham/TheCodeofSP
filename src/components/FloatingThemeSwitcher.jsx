@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import PostItSwitcher from "../assets/images/postIt/PostItSwitcher.webp";
-import "./FloatingThemeSwitcher.scss";
+import "./floatingThemeSwitcher.scss";
 
 export default function FloatingThemeSwitcher({ theme, setTheme }) {
   const [open, setOpen] = useState(false);

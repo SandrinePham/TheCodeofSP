@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import PostItIntro from "../assets/images/postIt/PostItIntro.webp";
 import "./intro.scss";
-import LogoEnergique from "../../src/assets/images/logo/LogoEnergique.svg";
-import LogoAcceuillant from "../../src/assets/images/logo/LogoAccueillant.svg";
-import LogoMinimalism from "../../src/assets/images/logo/LogoMinimalismWhite.svg";
+import LogoEnergique from "../assets/images/logo/LogoEnergique.svg";
+import LogoAccueillant from "../assets/images/logo/LogoAccueillant.svg";
+import LogoMinimalism from "../assets/images/logo/LogoMinimalismWhite.svg";
 
 export default function Intro({ onSelectTheme }) {
   const [hover, setHover] = useState("");
@@ -69,7 +69,7 @@ export default function Intro({ onSelectTheme }) {
             <button
               onMouseEnter={() => {
                 setHover("accueillant");
-                setLogo(LogoAcceuillant);
+                setLogo(LogoAccueillant);
               }}
               onClick={() => applyTheme("accueillant")}
               className="btn-accueillant"
