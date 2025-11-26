@@ -15,8 +15,7 @@
     gap: f.$spacing-m;
     min-height: 200px;
 
-    @media (max-width: f.$mobile) {
-      /* IMPORTANT : garde column en mobile */
+    @media (max-width: 876px) {
       flex-direction: column;
       align-items: center;
     }
@@ -140,7 +139,7 @@
 
 .theme-accueillant  {
   .home__subtitle {
-    color: var(--accent-color);
+    color: var(--secondary-color);
   }
 }
 
