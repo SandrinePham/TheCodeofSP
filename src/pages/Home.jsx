@@ -55,14 +55,13 @@ const Home = ({ theme }) => {
       <section className="home__presentation">
         <div className="home__presentation-container">
           <div className="home__postit">
-            {showPostIt && (
-              <img
-                src={PostIt}
-                alt="Post-it de présentation"
-                className="home__postit-image fly-in"
-                fetchPriority="high"
-              />
-            )}
+            {/* img TOUJOURS rendue : pre-fly = invisible mais occupe la place */}
+            <img
+              src={PostIt}
+              alt="Post-it de présentation"
+              className={`home__postit-image ${showPostIt ? "fly-in" : "pre-fly"}`}
+              fetchPriority="high"
+            />
           </div>
 
           <div className="home__content" data-show={showContent}>

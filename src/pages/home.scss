@@ -16,6 +16,7 @@
     min-height: 200px;
 
     @media (max-width: f.$mobile) {
+      /* IMPORTANT : garde column en mobile */
       flex-direction: column;
       align-items: center;
     }
@@ -23,11 +24,13 @@
 
   /* Post-it */
   .home__postit {
-    flex: 1;
+    /* Rester dans le flux (pas d'absolute) : permet empilement column mobile */
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 300px;
+    margin-bottom: f.$spacing-s; /* espace entre post-it et contenu en mobile */
 
     .home__postit-image {
       width: 250px;
@@ -35,30 +38,42 @@
       object-fit: contain;
       transform: rotate(-2deg);
       filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-      transition: transform 0.4s ease, filter 0.4s ease;
-      opacity: 0; /* caché par défaut */
+      transition: transform 0.4s ease, filter 0.4s ease, opacity 0.45s ease;
+      opacity: 1;
+      visibility: visible;
 
       &:hover {
         transform: rotate(0deg) scale(1.02);
         filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
       }
 
+      /* état initial avant animation : invisible mais occupe la place */
+      &.pre-fly {
+        opacity: 0;
+        visibility: hidden; /* évite interactions */
+        transform: translateY(-40px) rotate(20deg) scale(0.9);
+        pointer-events: none;
+      }
+
+      /* état animé : rendre visible puis jouer keyframes (opacité + transform) */
       &.fly-in {
-        animation: fly-in 1s forwards;
-        opacity: 1; /* devient visible au lancement de l'animation */
+        visibility: visible;
+        animation: fly-in 900ms cubic-bezier(.22,.9,.26,1) forwards;
       }
     }
   }
 
   /* Contenu */
   .home__content {
-    flex: 1;
+    flex: 1 1 auto;
     margin-left: f.$spacing-s;
     display: flex;
     flex-direction: column;
     justify-content: center;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
 
     &[data-show="true"] {
       opacity: 1;
@@ -109,13 +124,17 @@
 
   .home__highlights-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
     gap: f.$spacing-m;
     width: 100%;
     max-width: 1200px;
     margin: 20px auto 0;
+
+    @media (max-width: f.$tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 
@@ -124,7 +143,6 @@
     color: var(--accent-color);
   }
 }
-
 
 .theme-energique  {
   .home__subtitle {
@@ -138,16 +156,14 @@
   }
 }
 
-
-
 /* ---------------- Animations ---------------- */
 @keyframes fly-in {
   0% {
-    transform: translateY(-500px) rotate(20deg) scale(0.5);
+    transform: translateY(-60px) rotate(20deg) scale(0.9);
     opacity: 0;
   }
   50% {
-    transform: translateY(50px) rotate(-10deg) scale(1.1);
+    transform: translateY(10px) rotate(-6deg) scale(1.05);
     opacity: 1;
   }
   100% {
