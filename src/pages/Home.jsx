@@ -59,18 +59,24 @@ const Home = ({ theme }) => {
             <img
               src={PostIt}
               alt="Post-it de présentation"
-              className={`home__postit-image ${showPostIt ? "fly-in" : "pre-fly"}`}
+              className={`home__postit-image ${
+                showPostIt ? "fly-in" : "pre-fly"
+              }`}
               fetchPriority="high"
             />
           </div>
 
           <div className="home__content" data-show={showContent}>
-            <Slogan theme={theme} />
-            <p className="home__intro">{homeContent?.content}</p>
-            <p className="home__accroche">{homeContent?.accroche}</p>
-            <div className="home__titles">
-              <h1 className="home__title">{homeContent?.title}</h1>
-              <p className="home__subtitle">{homeContent?.subtitle}</p>
+            <div className="slogan-wrapper">
+              <Slogan theme={theme} />
+            </div>
+            <div className="home__content-fixed">
+              <p className="home__intro">{homeContent?.content}</p>
+              <p className="home__accroche">{homeContent?.accroche}</p>
+              <div className="home__titles">
+                <h1 className="home__title">{homeContent?.title}</h1>
+                <p className="home__subtitle">{homeContent?.subtitle}</p>
+              </div>
             </div>
           </div>
         </div>

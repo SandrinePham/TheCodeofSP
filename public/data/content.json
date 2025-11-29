@@ -4,7 +4,8 @@
     "subtitle": "Développeuse web",
     "content": "Écrivons ensemble l’histoire de votre projet digital. J’allie précision, performance et compréhension des besoins pour créer des interfaces fiables, élégantes et parfaitement adaptées à vos objectifs.",
     "accroche": "Prêts à transformer vos idées en réalité ?",
-    "slogan": "<p> Code your Ambitions ! </p>"
+    "slogan": "Coder avec précision,",
+    "slogan2": "créer avec intuition. "
   },
 
   "highlights": {
@@ -39,37 +40,37 @@
         "subtitle": "Mon histoire",
         "content": [
           "Je suis Sandrine Pham,",
-          "Après des études dans le transport et la logistique, j’ai décroché mon premier poste seulement un mois après l’obtention de ma licence. Pendant plus de dix ans, j’ai évolué dans des environnements variés — industriel, aéronautique puis BTP — et j’y ai construit une solide expertise en supply chain et en approvisionnement.",
-          "Au fil des années, j’ai découvert que, malgré mes compétences, je ne trouvais plus de sens dans ce métier. Les process immuables, le manque de stimulation intellectuelle et des environnements parfois toxiques ont été un signal clair : il était temps de redonner une direction à ma vie professionnelle.",
-          "Je me suis accordé un an pour réfléchir, entreprendre un bilan de compétences et un travail personnel. Tout m’a naturellement menée vers un domaine qui réunit ce que j’aime : la rigueur, la créativité, la résolution de problèmes et l’apprentissage continu.",
-          "Le développement web s’est imposé comme une évidence. Une discipline stimulante, exigeante, ouverte à tous les secteurs, et où l’on peut évoluer selon ses ambitions. Durant ma formation d’intégratrice web, j’ai découvert un univers totalement nouveau, presque comme ouvrir la porte d’un monde à la Narnia : bienveillant, dynamique, passionné, et où l’on valorise réellement la compétence et l’effort.",
-          "Aujourd’hui, je suis développeuse front-end, et j’ai enfin trouvé un métier qui me permet de créer, d’apprendre, de collaborer et de m’épanouir pleinement."
+          "Après mes études dans le transport et la logistique, j’ai rapidement intégré mon premier poste dès l’obtention de ma licence, et j’y ai développé une solide expertise en supply chain et approvisionnement dans des environnements variés — industriel, aéronautique et BTP.",
+          "Avec le temps, j’ai souhaité donner une nouvelle orientation à ma carrière pour l’aligner avec mes passions : la créativité, la rigueur et la résolution de problèmes.",
+          "J’ai consacré un an à réfléchir, entreprendre un bilan de compétences et explorer mes envies professionnelles. Cela m’a naturellement menée vers le développement web, un domaine stimulant et en constante évolution.",
+          "Le développement web est devenu une évidence : une discipline exigeante, dynamique et ouverte à tous les secteurs, où je peux créer, apprendre et évoluer selon mes ambitions.",
+          "Aujourd’hui, je suis développeuse front-end, et je m’épanouis pleinement en créant des interfaces fiables, élégantes et intuitives, en collaborant et en progressant chaque jour."
         ]
       },
       {
         "subtitle": "Ma philosophie",
         "content": [
-          "Créer pour les autres, c’est ce qui me motive profondément. J’aime comprendre une vision, la challenger, l’enrichir et la transformer en un projet concret, clair et utile.",
-          "Dans le développement comme dans la supply chain, la rigueur reste essentielle. Mais le web y ajoute une dimension qui me passionne : la liberté d’apprendre, d’innover, de créer sans limite et d’évoluer selon ses ambitions.",
-          "J’accorde une grande importance à l’organisation du travail, à la clarté des process et à la collaboration sur le long terme. Je m’inspire des méthodes agiles et du Kanban pour garantir un suivi transparent, une progression maîtrisée et une création de valeur continue.",
-          "Ma philosophie est simple : travailler sérieusement, sans se prendre au sérieux ; créer avec intention ; et toujours chercher à faire mieux que la veille."
+          "Créer pour les autres est ma motivation principale. J’aime comprendre une vision, la challenger et la transformer en un projet concret et utile.",
+          "La rigueur reste essentielle, mais le web y ajoute une dimension passionnante : la liberté d’innover, d’apprendre et de créer sans limites.",
+          "Je place une grande importance sur l’organisation, la clarté des process et la collaboration, en m’inspirant des méthodes agiles et du Kanban pour assurer un suivi transparent et une création de valeur continue.",
+          "Ma philosophie est simple : travailler sérieusement, créer avec intention, et chercher chaque jour à faire mieux qu’hier."
         ],
         "philosophyPoints": [
           {
             "label": "Rigueur & Clarté",
-            "description": "Construire des interfaces fiables, structurées et pensées pour durer."
+            "description": "Concevoir des interfaces fiables, élégantes et structurées, pensées pour durer."
           },
           {
             "label": "Création & Adaptabilité",
-            "description": "Produire chaque projet avec intention et capacité d'adaptation, grâce à une curiosité constante."
+            "description": "Réaliser chaque projet avec intention et flexibilité, guidée par la curiosité et l’innovation."
           },
           {
-            "label": "Collaboration authentique",
-            "description": "Avancer ensemble, avec transparence, respect et ambition."
+            "label": "Collaboration Authentique",
+            "description": "Avancer ensemble avec transparence, respect et ambition, pour un travail harmonieux et efficace."
           },
           {
-            "label": "Amélioration continue",
-            "description": "Toujours apprendre, affiner, et progresser."
+            "label": "Amélioration Continue",
+            "description": "Toujours apprendre, expérimenter et progresser, avec enthousiasme et motivation."
           }
         ]
       }
@@ -88,9 +89,9 @@
         "lieu": "Laxou (54), FR",
         "period": "Avril 2022 - Décembre 2022",
         "tasks": [
-          "Assistance à la négociation des achats",
-          "Mise en place de stratégies selon les projets",
-          "Gestion de commandes"
+          "Optimisation des achats et négociation efficace avec les fournisseurs.",
+          "Mise en place de stratégies adaptées aux projets pour garantir la disponibilité des ressources.",
+          "Suivi précis des commandes pour assurer un flux logistique fluide."
         ]
       },
       {
@@ -101,9 +102,9 @@
         "lieu": "Sorinières (44), FR",
         "period": "Octobre 2020 - Août 2021",
         "tasks": [
-          "Analyse des inventaires et stocks négatifs",
-          "Gestion logistique et navettes inter-sites",
-          "Participation à l’amélioration continue"
+          "Analyse proactive des inventaires pour anticiper les besoins.",
+          "Gestion logistique efficace et coordination entre sites.",
+          "Participation à l’amélioration continue des process pour plus d’efficacité."
         ]
       },
       {
@@ -114,9 +115,9 @@
         "lieu": "Vertou (44), FR",
         "period": "Janvier 2020 - Octobre 2020",
         "tasks": [
-          "Approvisionnements gros œuvre (2000 références)",
-          "Analyse des besoins et ruptures",
-          "Interface métier ventes/achats et fournisseurs"
+          "Gestion des approvisionnements gros œuvre avec rigueur et précision.",
+          "Analyse des besoins pour éviter les ruptures et garantir la satisfaction client.",
+          "Interface efficace entre les équipes ventes, achats et fournisseurs."
         ]
       },
       {
@@ -127,22 +128,22 @@
         "lieu": "Bouguenais (44), FR",
         "period": "Novembre 2017 - Décembre 2019",
         "tasks": [
-          "Approvisionnement sur l’A350 (3000 références)",
-          "Gestion des arrêts de chaîne",
-          "Interface multi-métiers et coordination fournisseurs"
+          "Assurer la disponibilité des pièces pour l’A350 avec une coordination efficace.",
+          "Optimiser les arrêts de chaîne et garantir la continuité de la production.",
+          "Coordination fluide entre fournisseurs et équipes multi-métiers."
         ]
       },
       {
         "title": "Agent logistique",
         "company": "Saint-Gobain Pam",
         "logo": "/images/logo/LogoSG.png",
-        "companyUrl": "https://www.saint-gobain.com/fr",
+        "companyUrl": "https://www.saint-gobain.com/fr/",
         "lieu": "Foug (54), FR",
         "period": "Janvier 2014 - Octobre 2017",
         "tasks": [
-          "Approvisionnement: gestion des flux et stocks",
-          "Traitement des flux parasites",
-          "Suivi de l'activité des sous-traitants"
+          "Gestion proactive des flux et stocks pour une logistique optimisée.",
+          "Mise en place de process pour minimiser les flux parasites.",
+          "Suivi efficace de l’activité des sous-traitants."
         ]
       },
       {
@@ -153,9 +154,9 @@
         "lieu": "Vandoeuvre (54), FR",
         "period": "Juillet 2012 - Décembre 2013",
         "tasks": [
-          "Création et suivi des tournées chauffeurs",
-          "Analyse des consommations clients",
-          "Gestion des points de rupture"
+          "Création et suivi efficace des tournées chauffeurs.",
+          "Analyse des consommations pour optimiser les approvisionnements.",
+          "Gestion proactive des points de rupture pour garantir la satisfaction client."
         ]
       },
       {
@@ -166,9 +167,9 @@
         "lieu": "Rosières-aux-salines (54), FR",
         "period": "Septembre 2011 - Juin 2012",
         "tasks": [
-          "Déploiement de l'activité Europe",
-          "Suivis des KPI clients",
-          "Service exploitation: gestion des tournées des chauffeurs"
+          "Déploiement efficace des activités en Europe avec suivi rigoureux.",
+          "Suivi et analyse des KPI clients pour améliorer les performances.",
+          "Optimisation des tournées des chauffeurs pour un service fluide et fiable."
         ]
       }
     ]
@@ -183,44 +184,77 @@
     "subtitle4": "Diplômes & Certifications",
     "content": {
       "languagesFrameworks": [
-        { "name": "HTML", "level": 95 },
-        { "name": "CSS / SCSS / Animations", "level": 90 },
-        { "name": "SEO & Accessibilité", "level": 90 },
-        { "name": "API REST", "level": 90 },
-        { "name": "JavaScript", "level": 90 },
-        { "name": "React", "level": 85 },
-        { "name": "Redux Toolkit", "level": 75 }
+        {
+          "name": "HTML",
+          "level": 95,
+          "description": "Structurer et créer des interfaces accessibles et sémantiques."
+        },
+        {
+          "name": "CSS / SCSS / Animations",
+          "level": 90,
+          "description": "Réaliser des designs modernes et interactifs avec style et fluidité."
+        },
+        {
+          "name": "SEO & Accessibilité",
+          "level": 90,
+          "description": "Optimiser la visibilité et l’expérience utilisateur pour tous."
+        },
+        {
+          "name": "API REST",
+          "level": 90,
+          "description": "Intégrer et exploiter des données avec efficacité."
+        },
+        {
+          "name": "JavaScript",
+          "level": 90,
+          "description": "Créer des fonctionnalités dynamiques et réactives."
+        },
+        {
+          "name": "React",
+          "level": 85,
+          "description": "Développer des interfaces performantes et modulaires."
+        },
+        {
+          "name": "Redux Toolkit",
+          "level": 75,
+          "description": "Gérer l’état des applications avec rigueur et clarté."
+        },
+        {
+          "name": "Test unitaire",
+          "level": 70,
+          "description": "Assurer la fiabilité et la robustesse du code."
+        }
       ],
       "toolsEnvironment": [
-        "Git",
-        "GitHub",
-        "VS Code",
-        "Figma",
-        "Google Analytics",
-        "Postman",
-        "Lighthouse",
-        "Chrome DevTools"
+        "Git – Gestion de version efficace",
+        "GitHub – Collaboration et partage de projets",
+        "VS Code – Environnement de développement optimisé",
+        "Figma – Prototypage et design d’interface",
+        "Google Analytics – Analyse et optimisation des performances",
+        "Postman – Test et intégration d’APIs",
+        "Lighthouse – Audit et amélioration des performances web",
+        "Chrome DevTools – Débogage et optimisation avancée"
       ],
       "methodologies": [
         {
           "name": "Kanban",
-          "description": "Organisation du travail avec des tableaux visuels"
+          "description": "Organiser le travail visuellement pour une progression fluide et transparente."
         },
         {
           "name": "Agilité",
-          "description": "Travail en mode projet, itératif et collaboratif"
+          "description": "Collaborer et itérer rapidement pour créer de la valeur continuellement."
         },
         {
           "name": "Responsive / Mobile First",
-          "description": "Interfaces optimisées pour tous les supports"
+          "description": "Créer des interfaces adaptées à tous les supports et résolutions."
         },
         {
           "name": "Système de veille",
-          "description": "Surveillance des tendances et évolutions technologiques"
+          "description": "Se tenir à jour et anticiper les évolutions technologiques."
         },
         {
           "name": "Marketing digital",
-          "description": "Notions de référencement, d’analyse et de visibilité"
+          "description": "Appliquer des bonnes pratiques pour maximiser visibilité et impact."
         }
       ],
       "diplomas": [
@@ -232,15 +266,6 @@
           "institutionUrl": "https://openclassrooms.com/",
           "lieux": "Full remote, France",
           "qualification": "Création d'applications web et mobiles, intégration, accessibilité, SEO",
-          "skills": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React",
-            "Redux Toolkit",
-            "SEO",
-            "Accessibilité"
-          ],
           "year": "2025",
           "icon": "FaCode"
         },
@@ -251,7 +276,7 @@
           "logo": "/images/logo/LogoIsteli.svg",
           "institutionUrl": "https://www.isteli.fr/",
           "lieux": "Jarville-la-Malgrange (54), France",
-          "qualification": "Gestion de la chaîne logistique, optimisation des flux, management d'équipe",
+          "qualification": "Optimisation de la chaîne logistique et management d’équipe",
           "year": "2012",
           "icon": "FaWarehouse"
         },
@@ -262,7 +287,7 @@
           "logo": "/images/logo/LogoIsteli.svg",
           "institutionUrl": "https://www.isteli.fr/",
           "lieux": "Jarville-la-Malgrange (54), France",
-          "qualification": "Gestion du transport routier",
+          "qualification": "Gestion professionnelle du transport et de la logistique",
           "year": "2011",
           "icon": "FaWarehouse"
         }

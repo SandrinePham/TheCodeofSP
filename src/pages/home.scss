@@ -28,12 +28,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 300px;
+    max-width: 500px;
     margin-bottom: f.$spacing-s; /* espace entre post-it et contenu en mobile */
+    &:hover {
+        transform: rotate(-2deg) scale(1.02);
+    }
 
     .home__postit-image {
-      width: 250px;
-      height: 250px;
+      width: 300px;
+      height: 300px;
       object-fit: contain;
       transform: rotate(-2deg);
       filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
@@ -42,7 +45,6 @@
       visibility: visible;
 
       &:hover {
-        transform: rotate(0deg) scale(1.02);
         filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
       }
 
@@ -57,12 +59,41 @@
       /* état animé : rendre visible puis jouer keyframes (opacité + transform) */
       &.fly-in {
         visibility: visible;
-        animation: fly-in 900ms cubic-bezier(.22,.9,.26,1) forwards;
+        animation: fly-in 900ms cubic-bezier(0.22, 0.9, 0.26, 1) forwards;
       }
     }
   }
 
   /* Contenu */
+
+  .home__separator {
+    /* Taille fixe pour séparer le slogan du contenu suivant */
+    height: 1rem; // espace vertical (modifiable)
+    width: 100%; // prend toute la largeur disponible
+    display: block;
+
+    /* Optionnel : si tu veux une ligne horizontale */
+    // border-bottom: 1px solid var(--color-border);
+
+    /* Optionnel : animation d'apparition en fondu */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    // si tu veux l’afficher après fade-in du slogan
+    &.visible {
+      opacity: 1;
+    }
+  }
+
+  .slogan-wrapper {
+    position: relative;
+    height: 4rem; // ⚡ ajuste en fonction de la hauteur maximale de tes slogans
+  }
+
+  .home__content-fixed {
+    position: relative;
+  }
+
   .home__content {
     flex: 1 1 auto;
     margin-left: f.$spacing-s;
@@ -89,7 +120,8 @@
 
   .home__intro {
     text-align: left;
-    margin-top: 10px;
+    margin-top: 30px;
+    text-align: center;
     @media (max-width: f.$mobile) {
       text-align: justify;
     }
@@ -137,19 +169,19 @@
   }
 }
 
-.theme-accueillant  {
+.theme-accueillant {
   .home__subtitle {
     color: var(--secondary-color);
   }
 }
 
-.theme-energique  {
+.theme-energique {
   .home__subtitle {
     filter: drop-shadow(0 0 10px var(--accent-color));
   }
 }
 
-.theme-minimaliste  {
+.theme-minimaliste {
   .home__subtitle {
     color: var(--second-accent-color);
   }

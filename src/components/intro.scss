@@ -1,318 +1,179 @@
 @use "../styles/univers/foundation/foundation.scss" as f;
 
-.intro-page {
-  position: relative;
+.intro-search-page {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  text-align: center;
-  background: linear-gradient(
-    to right,
-    #faf0e6 0% 33.33%,
-    #0d0221 33.33% 66.66%,
-    #dde1e4 66.66% 100%
-  );
-  transition: background 0.6s ease;
+  background: #f2f2f2;
+  padding: 2rem;
+  animation: fadeIn 0.6s ease;
+  min-height: 100vh;
+  justify-content: flex-start; // ← au lieu de center
+}
 
-  &.exiting {
-    pointer-events: none; // désactive hover pendant la sortie
+/* --- Barre de recherche style Google --- */
+.search-box {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.fake-google-bar {
+  width: 100%;
+  background: white;
+  border-radius: 50px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  border: 1px solid #dcdcdc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-loupe {
+  left: 1.5rem;
+  font-size: 1.2rem;
+  color: #70757a;
+}
+
+.typing-text {
+  white-space: nowrap;
+}
+
+.cursor {
+  opacity: 1;
+  animation: blink 0.8s infinite;
+  font-size : 1.5rem;
+  
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
   }
-
-  .intro-container {
-    width: 400px;
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: f.$spacing-s;
-    padding: f.$spacing-xs;
-    background-color: #0d0221;
-  }
-
-  .intro-title,
-  .intro-subtitle,
-  .intro-default,
-  .intro-buttons {
-    transition: color 0.6s ease, opacity 0.5s ease;
-  }
-
-  .intro-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2rem;
-    color: #00ff08;
-    font-family: "Share Tech Mono", monospace;
-    transform: rotate(1deg);
-    text-decoration: none;
-    background-color: transparent;
-    text-shadow: 0 0 20px #00ff08, 0 0 20px #00ff08;
-    filter: drop-shadow(0 0 10px #00ff08);
-
-    /* 💥 Effet scintillant */
-    animation: energique-glitter 1.8s infinite ease-in-out alternate;
-  }
-
-  .intro-ttitle {
-    font-size: 1rem;
-    margin-top: -5px;
-    color: #ffea00;
-    font-weight: bold;
-    margin-bottom: 0;
-  }
-
-  .intro-subtitle {
-    color: white;
-    font-size: 1.2rem;
-    margin-top: 10px;
-  }
-
-  /* Post-it */
-  .intro-image {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    opacity: 0; // invisible par défaut
-    transition: transform 0.6s ease, filter 0.6s ease;
-
-    @media (max-width: f.$mobile) {
-      width: 250px;
-      height: 250px;
-    }
-
-    &.fly-in {
-      animation: fly-in 1s forwards;
-    }
-
-    &.fly-out {
-      animation: fly-out 1s forwards;
-    }
-  }
-
-  .intro-hover-text {
-    font-size: 1rem;
-    color: white;
-    margin-top: 10px;
+  51%,
+  100% {
     opacity: 0;
-    animation: fade-in 0.3s forwards;
-
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-        transform: translateY(5px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  }
-
-  .intro-buttons {
-    display: flex;
-    gap: 1rem;
-
-    @media (max-width: f.$mobile) {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    // reset hover sur le container pour plus de stabilité
-    &:hover button {
-      pointer-events: auto;
-    }
-
-    button {
-      padding: 0.25rem 0.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all 0.25s ease;
-    }
-
-    .btn-accueillant {
-      background: #8b4513;
-      color: #faf0e6;
-      border-color: #d4af37;
-      font-family: "Playfair Display", serif;
-
-      &:hover {
-        background: #d4af37;
-        color: #8b4513;
-        transform: scale(1.05);
-        font-size: 1.05rem;
-        box-shadow: 0 0 15px #d4af37;
-      }
-    }
-
-    .btn-energique {
-      background: #1a103d;
-      color: #00ff08;
-      border-color: #00ff08;
-      font-family: "Share Tech Mono", monospace;
-
-      &:hover {
-        background: #00ff08;
-        color: #1a103d;
-        transform: rotate(1deg) scale(1.05);
-        font-size: 1.05rem;
-        box-shadow: 0 0 20px #00ff08;
-      }
-    }
-
-    .btn-minimalism {
-      background: #000;
-      color: #fff;
-      border-color: #2f6bff;
-      font-family: "Space Grotesk", sans-serif;
-
-      &:hover {
-        background: #2f6bff;
-        font-size: 1.05rem;
-        box-shadow: 0 0 15px #2f6bff;
-      }
-    }
-  }
-
-  .intro-default {
-    background: #f5e6d3;
-    cursor: pointer;
-    color: #8b4513;
-    padding: 0.25rem 0.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all 0.25s ease;
-
-    &:hover {
-      background: #ffea00;
-      color: black;
-      box-shadow: 0 0 15px #ffea00;
-    }
-  }
-
-  .intro-logo {
-    width: 80px;
-    height: auto;
-    margin-top: 10px;
-  }
-
-  /* Animations */
-  .fade-out {
-    animation: fade-out 1s forwards;
-  }
-
-  @keyframes fly-in {
-    0% {
-      transform: scale(0.5) rotate(-20deg) translateY(-500px);
-      opacity: 0;
-    }
-    50% {
-      transform: scale(1.1) rotate(10deg) translateY(-50px);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1) rotate(0deg) translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes fly-out {
-    0% {
-      transform: scale(1) rotate(0deg) translateY(0);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.1) rotate(-10deg) translateY(50px);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(0.5) rotate(-20deg) translateY(-500px);
-      opacity: 0;
-    }
-  }
-
-  @keyframes fade-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-  /* Hover dynamique stable */
-  &[data-hover="accueillant"] {
-    background: #faf0e6;
-    .intro-container {
-      background-color: transparent;
-    }
-    .intro-title {
-      color: #6b3a0d;
-      font-family: "Playfair Display", serif;
-      border-color: transparent;
-      text-shadow: 0 0 5px transparent, 0 0 20px transparent;
-    }
-    .intro-ttitle {
-      color: #d4af37;
-    }
-    .intro-subtitle {
-      color: black;
-      font-family: "Montserrat", sans-serif;
-    }
-    .intro-image {
-      transform: rotate(-2deg) scale(1.02);
-      transition: transform 0.6s ease-in-out;
-      border: 1px solid #d4af37;
-    }
-  }
-
-  &[data-hover="energique"] {
-    background: #0d0221;
-    .intro-image {
-      transform: rotate(2deg) scale(1.05);
-      transition: transform 0.6s ease-in-out;
-    }
-    .intro-ttitle {
-      color: #ffea00;
-    }
-  }
-
-  &[data-hover="minimalism"] {
-    background: linear-gradient(
-      to bottom,
-      #ffffff 20%,
-      #dde1e4 50%,
-      #000000 100%
-    );
-    .intro-container {
-      background-color: transparent;
-    }
-
-    .intro-title,
-    .intro-ttitle {
-      color: black;
-      font-family: "Space Grotesk", sans-serif;
-      text-shadow: 0 0 5px transparent, 0 0 20px transparent;
-    }
-
-    .intro-ttitle {
-      color: #2f6bff;
-    }
-    .intro-subtitle,
-    .intro-default {
-      color: #555555;
-      font-family: "Poppins", sans-serif;
-    }
-
-    .intro-image {
-      transform: rotate(0deg) scale(1.01);
-      transition: transform 0.6s ease-in-out;
-      border: 1px solid #d5d5d5;
-    }
   }
 }
 
+/* --- Résultats style Google --- */
+.search-results {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none; /* empêche le clic tant que pas visible */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  min-height: 300px; /* réserve l’espace pour éviter le saut, ajuste selon besoin */
+}
+
+.search-results.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* active le clic une fois visible */
+}
+
+@keyframes resultsFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-header {
+  font-size: 0.5rem;
+  color: #70757a;
+  margin-bottom: 0.5rem;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.lien-title {
+  color: #202124;
+}
+
+.lien {
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #4d5156;
+}
+
+.result-url {
+  font-size: 1.2rem;
+  color: #1a0dab;
+  text-decoration: none;
+  margin-bottom: 0.2rem;
+  font-family: Google Sans, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.result-description {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #474747;
+}
+
+.search-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  transition: all 0.25s ease;
+  font-family: "Inter", sans-serif;
+
+  .search-favicon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 0.6rem;
+    margin-left: 1rem;
+    flex-shrink: 0;
+  }
+
+  .search-url {
+    all: unset;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    font-family: Google Sans, Arial, sans-serif;
+    text-decoration: none; // supprime le soulignement par défaut
+  }
+
+  .search-description {
+    font-size: 0.95rem;
+    color: #545454;
+    line-height: 1.3;
+  }
+}
+
+span {
+  font-size: 0.9rem;
+  color: #3a3a3a;
+}
+
+/* Apparition progressive de la page */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

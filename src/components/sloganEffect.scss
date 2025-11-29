@@ -10,22 +10,28 @@
   align-items: center;
 
   .sloganEffect-line {
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 700;
-    display: inline-block;
-    white-space: pre;
     color: var(--color-header);
+  }
 
-    @media (max-width: f.$mobile) {
-      font-size: 1.8rem;
-    }
+  /* Conteneur du texte + curseur */
+  .text-with-cursor {
+    display: inline-flex; /* 👈 le curseur s’aligne au dernier caractère */
+    align-items: baseline;
+    white-space: pre-wrap; /* 👈 permet les retours à la ligne naturels */
   }
 
   .cursor {
-    margin-left: 4px;
-    display: inline-block;
+    margin-left: 2px;
     animation: blink 1s step-start infinite;
     font-weight: bold;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
 
@@ -50,8 +56,7 @@
     font-family: "Orbitron", sans-serif;
     text-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color),
       0 0 15px var(--accent-color);
-          color: var(--accent-color);
-
+    color: var(--accent-color);
   }
 
   .cursor {
