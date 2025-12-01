@@ -53,10 +53,12 @@
 /* ⚡ ENERGIQUE */
 .sloganEffect-container.energique {
   .sloganEffect-line {
-    font-family: "Orbitron", sans-serif;
+    font-family: "Share Tech Mono", monospace;
     text-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color),
       0 0 15px var(--accent-color);
     color: var(--accent-color);
+
+    @include f.title-energique;
   }
 
   .cursor {

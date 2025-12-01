@@ -31,7 +31,6 @@
 /* ⚡ Hover energique — effet néon scintillant */
 @mixin hover-energique {
   font-weight: 700;
-  font-size: 1.05rem;
   transform: rotate(1deg);
   text-decoration: none;
   color: var(--accent-color);
@@ -42,6 +41,18 @@
   /* 💥 Effet scintillant */
   animation: energique-glitter 1.8s infinite ease-in-out alternate;
 }
+
+@mixin title-energique {
+  text-decoration: none;
+  color: var(--accent-color);
+  background-color: transparent;
+  border-color: var(--accent-color);
+  text-shadow: 0 0 5px var(--accent-color), 0 0 20px var(--accent-color);
+
+  /* 💥 Effet scintillant */
+  animation: energique-glitter 1.8s infinite ease-in-out alternate;
+}
+
 
 
 

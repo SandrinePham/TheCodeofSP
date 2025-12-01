@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Slogan from "../components/Slogan.jsx";
 import HighLightCard from "../components/HighlightCard.jsx";
 import useEffectContent from "../hooks/useEffectContent.js";
-import PostIt from "../assets/images/postIt/PostItHomePortfolio.webp";
+import HomeNote from "../assets/images/images/PortfolioHome.webp";
 import "./home.scss";
 
 const Home = ({ theme }) => {
@@ -55,15 +55,20 @@ const Home = ({ theme }) => {
       <section className="home__presentation">
         <div className="home__presentation-container">
           <div className="home__postit">
-            {/* img TOUJOURS rendue : pre-fly = invisible mais occupe la place */}
             <img
-              src={PostIt}
+              src={HomeNote}
               alt="Post-it de présentation"
               className={`home__postit-image ${
                 showPostIt ? "fly-in" : "pre-fly"
               }`}
               fetchPriority="high"
             />
+
+            {/* Bande de scotch */}
+            <div
+              className={`tape ${showPostIt ? "tape-in" : ""}`}
+              aria-hidden="true"
+            ></div>
           </div>
 
           <div className="home__content" data-show={showContent}>

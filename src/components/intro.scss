@@ -48,8 +48,7 @@
 .cursor {
   opacity: 1;
   animation: blink 0.8s infinite;
-  font-size : 1.5rem;
-  
+  font-size: 1.5rem;
 }
 
 @keyframes blink {
@@ -72,22 +71,20 @@
   gap: 1rem;
   opacity: 0;
   transform: translateY(20px);
-  pointer-events: none; /* empêche le clic tant que pas visible */
+  pointer-events: none; 
   transition: opacity 0.5s ease, transform 0.5s ease;
-  min-height: 300px; /* réserve l’espace pour éviter le saut, ajuste selon besoin */
+  min-height: 300px; 
+
+  &.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 .search-results.visible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto; /* active le clic une fois visible */
-}
-
-@keyframes resultsFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .result-header {

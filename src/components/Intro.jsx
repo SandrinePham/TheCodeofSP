@@ -10,6 +10,8 @@ export default function Intro({ onSelectTheme }) {
   const [typingText, setTypingText] = useState("");
   const fullText = "Sandrine Pham Développeuse Web";
   const [showResults, setShowResults] = useState(false);
+  const [selectedTheme, setSelectedTheme] = useState(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     let index = 0;
@@ -20,13 +22,19 @@ export default function Intro({ onSelectTheme }) {
         clearInterval(interval);
         setTimeout(() => setShowResults(true), 500);
       }
-    }, 40);
+    }, 30);
     return () => clearInterval(interval);
   }, []);
 
   const applyTheme = (theme) => {
-    sessionStorage.setItem("theme", theme);
-    onSelectTheme(theme);
+    setSelectedTheme(theme);
+    setIsTransitioning(true);
+
+    // attend la fin de l'animation (ex: 500ms)
+    setTimeout(() => {
+      sessionStorage.setItem("theme", theme);
+      onSelectTheme(theme);
+    }, 500);
   };
 
   return (
@@ -39,81 +47,67 @@ export default function Intro({ onSelectTheme }) {
         </div>
       </div>
 
-        <div className={`search-results ${showResults ? "visible" : ""}`}>
-          <div className="result-accueillant">
-            <button
-              onClick={() => applyTheme("accueillant")}
-              className="lien"
-            >
-              <div className="search-item">
-                <img
-                  src={LogoAccueillant}
-                  alt="logo"
-                  className="search-favicon"
-                />
-                <div className="result-header">
-                  <span className="lien-title">Sandrine Pham</span>
-                  <span className="lien">http://www.thecodeofsp.com</span>
-                </div>
+      <div
+        className={`search-results ${showResults ? "visible" : ""} ${
+          isTransitioning ? "fade-out" : ""
+        }`}
+      >
+        {" "}
+        <div className="result-accueillant">
+          <button onClick={() => applyTheme("accueillant")} className="lien">
+            <div className="search-item">
+              <img
+                src={LogoAccueillant}
+                alt="logo"
+                className="search-favicon"
+              />
+              <div className="result-header">
+                <span className="lien-title">Sandrine Pham</span>
+                <span className="lien">http://www.thecodeofsp.fr</span>
               </div>
-              <p className="result-url">Portfolio version Accueillante</p>
-            </button>
-            <p className="result-description">
-              Découvrez mon portfolio dans une version chaleureuse et élégante,
-              parfaite pour vous projeter sur un projet à dimension humaine :
-              coaching, vitrine, e-commerce…{" "}
-            </p>
-          </div>
-
-          <div className="result-energique">
-            <button
-              onClick={() => applyTheme("energique")}
-              className="lien"
-            >
-              <div className="search-item">
-                <img
-                  src={LogoEnergique}
-                  alt="logo"
-                  className="search-favicon"
-                />
-                <div className="result-header">
-                  <span className="lien-title">Sandrine Pham</span>
-                  <span className="lien">http://www.thecodeofsp.com</span>
-                </div>
-              </div>
-              <p className="result-url">Portfolio version Énergique</p>
-            </button>
-            <p className="result-description">
-              Une présentation énergique et audacieuse de mon portfolio, idéale
-              pour vous projeter sur un projet innovant et créatif : start-up,
-              agence, portfolio…{" "}
-            </p>
-          </div>
-
-          <div className="result-minimalism">
-            <button
-              onClick={() => applyTheme("minimalism")}
-              className="lien"
-            >
-              <div className="search-item">
-                <img
-                  src={LogoMinimalism}
-                  alt="logo"
-                  className="search-favicon"
-                />
-                <div className="result-header">
-                  <span className="lien-title">Sandrine Pham</span>
-                  <span className="lien">http://www.thecodeofsp.com</span>
-                </div>
-              </div>
-              <p className="result-url">Portfolio version Minimaliste</p>
-            </button>
-            <p className="result-description">
-              Version propre et moderne de mon portfolio, parfaite pour vos
-              projets où l’information prime : santé, banque, institutionnel…{" "}
-            </p>
-          </div>
+            </div>
+            <p className="result-url">Portfolio version Accueillante</p>
+          </button>
+          <p className="result-description">
+            Découvrez mon portfolio dans une version chaleureuse et élégante,
+            parfaite pour vous projeter sur un projet à dimension humaine :
+            coaching, vitrine, e-commerce…{" "}
+          </p>
         </div>
+        <div className="result-energique">
+          <button onClick={() => applyTheme("energique")} className="lien">
+            <div className="search-item">
+              <img src={LogoEnergique} alt="logo" className="search-favicon" />
+              <div className="result-header">
+                <span className="lien-title">Sandrine Pham</span>
+                <span className="lien">http://www.thecodeofsp.fr</span>
+              </div>
+            </div>
+            <p className="result-url">Portfolio version Énergique</p>
+          </button>
+          <p className="result-description">
+            Une présentation énergique et audacieuse de mon portfolio, idéale
+            pour vous projeter sur un projet innovant et créatif : start-up,
+            agence, portfolio…{" "}
+          </p>
+        </div>
+        <div className="result-minimalism">
+          <button onClick={() => applyTheme("minimalism")} className="lien">
+            <div className="search-item">
+              <img src={LogoMinimalism} alt="logo" className="search-favicon" />
+              <div className="result-header">
+                <span className="lien-title">Sandrine Pham</span>
+                <span className="lien">http://www.thecodeofsp.fr</span>
+              </div>
+            </div>
+            <p className="result-url">Portfolio version Minimaliste</p>
+          </button>
+          <p className="result-description">
+            Version propre et moderne de mon portfolio, parfaite pour vos
+            projets où l’information prime : santé, banque, institutionnel…{" "}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

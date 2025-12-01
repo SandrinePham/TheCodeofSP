@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import PostItSwitcher from "../assets/images/postIt/PostItSwitcher.webp";
+import FloatingSwitcher from "../assets/images/images/FloatingSwitcher.webp";
 import "./floatingThemeSwitcher.scss";
 
 export default function FloatingThemeSwitcher({ theme, setTheme }) {
@@ -54,7 +54,7 @@ export default function FloatingThemeSwitcher({ theme, setTheme }) {
         aria-label="Ouvrir le sélecteur de thème"
       >
         <img
-          src={PostItSwitcher}
+          src={FloatingSwitcher}
           alt=""
           aria-hidden="true"
         />
