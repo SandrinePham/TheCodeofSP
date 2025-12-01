@@ -18,11 +18,15 @@ function App() {
 
   const handleThemeSelect = (selectedTheme) => {
     setTheme(selectedTheme);
+
+    // Démarre l'animation fade-out
     setAnimating(true);
+
+    // Ne supprime pas Intro immédiatement, attends la fin de l'animation
     setTimeout(() => {
-      setShowIntro(false);
+      setShowIntro(false); // maintenant on retire le composant du DOM
       setAnimating(false);
-    }, 1000);
+    }, 700); // durée identique au fade-out CSS
   };
 
   // Nouvelle fonction pour revenir à Intro

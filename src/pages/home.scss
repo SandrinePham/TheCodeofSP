@@ -1,4 +1,12 @@
 @use "../styles/univers/foundation/foundation.scss" as f;
+.home {
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out;
+
+  &[data-show="true"] {
+    opacity: 1;
+  }
+}
 
 .home__presentation {
   width: 100%;
@@ -42,72 +50,35 @@
     }
 
     .tape {
-      --width: 130px;
-      --height: 30px;
-      --color: #f3df73;
-      --rotate: -8deg;
-
       position: absolute;
       top: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
-      height: 35px;
-      background: rgba(255, 255, 200, 0.65);
-      backdrop-filter: blur(2px);
-      border-radius: 4px;
-      transform-origin: top center;
-
-      /* invisible par défaut */
+      width: 120px; // adapte selon la largeur de ton image
+      height: auto;
       opacity: 0;
       visibility: hidden;
 
-      /* texture scotch */
-      background: repeating-linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.04) 0px,
-          rgba(0, 0, 0, 0.04) 2px,
-          transparent 2px,
-          transparent 6px
-        ),
-        linear-gradient(90deg, #e6d36b 0%, var(--color) 50%, #e6d36b 100%);
-
-      border-radius: 4px;
-      pointer-events: none; /* évite interactions */
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-
-      /* bord déchiré */
-      &::after {
-        content: "";
-        position: absolute;
-        left: 6px;
-        right: 6px;
-        bottom: -8px;
-        height: 12px;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.15),
-          rgba(0, 0, 0, 0.05)
-        );
-        border-radius: 2px;
-        transform: rotate(3deg) skewX(-6deg);
-        filter: blur(0.3px);
-        z-index: -1;
+      &.tape-in {
+        visibility: visible;
+        animation: tape-drop 700ms ease-out forwards;
+        animation-delay: 900ms;
       }
     }
 
-    /* état initial */
-    .tape-pre {
-      opacity: 0;
-      visibility: hidden;
-      transform: translateX(-50%) translateY(-60px) rotate(-20deg);
-    }
-
-    /* animation d’arrivée */
-    .tape-in {
-      visibility: visible; /* devient visible juste avant la 1ère frame */
-      animation: tape-drop 700ms ease-out forwards;
-      animation-delay: 900ms; /* tu ajustes ici pour synchroniser */
+    @keyframes tape-drop {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-40px) rotate(-25deg);
+      }
+      60% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(4px) rotate(5deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0) rotate(-5deg);
+      }
     }
 
     /* keyframes */
@@ -159,19 +130,11 @@
   /* Contenu */
 
   .home__separator {
-    /* Taille fixe pour séparer le slogan du contenu suivant */
     height: 1rem; // espace vertical (modifiable)
     width: 100%; // prend toute la largeur disponible
     display: block;
-
-    /* Optionnel : si tu veux une ligne horizontale */
-    // border-bottom: 1px solid var(--color-border);
-
-    /* Optionnel : animation d'apparition en fondu */
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-
-    // si tu veux l’afficher après fade-in du slogan
     &.visible {
       opacity: 1;
     }
@@ -179,7 +142,7 @@
 
   .slogan-wrapper {
     position: relative;
-    height: 4rem; // ⚡ ajuste en fonction de la hauteur maximale de tes slogans
+    height: 4rem;
   }
 
   .home__content-fixed {
@@ -296,5 +259,18 @@
   100% {
     transform: translateY(0) rotate(-2deg) scale(1);
     opacity: 1;
+  }
+}
+
+.theme-accueillant {
+  .tape {
+    animation: none !important;
+    opacity: 0 !important; // ou 0 si tu veux cacher le scotch
+    visibility: visible !important;
+    transform: translateX(-50%) translateY(0) rotate(0deg) !important;
+  }
+
+  .tape-in {
+    animation: none !important;
   }
 }

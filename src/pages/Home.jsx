@@ -2,10 +2,21 @@ import React, { useEffect, useState } from "react";
 import Slogan from "../components/Slogan.jsx";
 import HighLightCard from "../components/HighlightCard.jsx";
 import useEffectContent from "../hooks/useEffectContent.js";
-import HomeNote from "../assets/images/images/PortfolioHome.webp";
+import HomeAccueillant from "../assets/images/images/HomeAccueillant.webp";
+import HomeEnergique from "../assets/images/images/HomeEnergique.webp";
+import HomeMinimalism from "../assets/images/images/HomeMinimalism.webp";
+import Scotch from "../assets/images/images/Scotch.webp"; // une seule image pour tous les thèmes
+
 import "./home.scss";
 
 const Home = ({ theme }) => {
+  const homeImage =
+    {
+      accueillant: HomeAccueillant,
+      energique: HomeEnergique,
+      minimalism: HomeMinimalism,
+    }[theme] || HomeAccueillant;
+
   const { content, loading, error } = useEffectContent();
   const [showContent, setShowContent] = useState(false);
   const [showPostIt, setShowPostIt] = useState(false);
@@ -56,21 +67,21 @@ const Home = ({ theme }) => {
         <div className="home__presentation-container">
           <div className="home__postit">
             <img
-              src={HomeNote}
-              alt="Post-it de présentation"
+              src={homeImage}
+              alt={`Illustration du thème ${theme}`}
               className={`home__postit-image ${
                 showPostIt ? "fly-in" : "pre-fly"
               }`}
               fetchPriority="high"
             />
-
-            {/* Bande de scotch */}
-            <div
-              className={`tape ${showPostIt ? "tape-in" : ""}`}
+            {/* Bande de scotch en image */}
+            <img
+              src={Scotch}
+              alt=""
+              className={`tape ${showPostIt ? "tape-in" : "tape-pre"}`}
               aria-hidden="true"
-            ></div>
+            />
           </div>
-
           <div className="home__content" data-show={showContent}>
             <div className="slogan-wrapper">
               <Slogan theme={theme} />

@@ -1,8 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
-import FloatingSwitcher from "../assets/images/images/FloatingSwitcher.webp";
+import FloatingSwitcherAcceuillant from "../assets/images/images/FloatingSwitcherAcceuillant.webp";
+import FloatingSwitcherEnergique from "../assets/images/images/FloatingSwitcherEnergique.webp";
+import FloatingSwitcherMinimalism from "../assets/images/images/FloatingSwitcherMinimalism.webp";
 import "./floatingThemeSwitcher.scss";
 
 export default function FloatingThemeSwitcher({ theme, setTheme }) {
+  const switcherImage =
+    {
+      accueillant: FloatingSwitcherAcceuillant,
+      energique: FloatingSwitcherEnergique,
+      minimalism: FloatingSwitcherMinimalism,
+    }[theme] || FloatingSwitcherAcceuillant;
+
   const [open, setOpen] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const rafRef = useRef(null);
@@ -54,8 +63,8 @@ export default function FloatingThemeSwitcher({ theme, setTheme }) {
         aria-label="Ouvrir le sélecteur de thème"
       >
         <img
-          src={FloatingSwitcher}
-          alt=""
+          src={switcherImage}
+          alt={`Switch du thème ${theme}`}
           aria-hidden="true"
         />
       </button>

@@ -6,9 +6,9 @@ import LogoEnergique from "../assets/images/logo/SPEnergique.svg";
 import LogoAccueillant from "../assets/images/logo/SPAcceuillant.svg";
 import LogoMinimalism from "../assets/images/logo/SPMinimalism.svg";
 
-export default function Intro({ onSelectTheme }) {
+export default function Intro({ onSelectTheme, animating }) {
   const [typingText, setTypingText] = useState("");
-  const fullText = "Sandrine Pham Développeuse Web";
+  const fullText = "Sandrine Pham, Développeuse Web";
   const [showResults, setShowResults] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -39,17 +39,23 @@ export default function Intro({ onSelectTheme }) {
 
   return (
     <div className="intro-search-page">
+      <div className={`intro-content ${isTransitioning ? "fade-out" : ""}`}>
       <div className="search-box">
         <div className="fake-google-bar">
           <FaSearch className="search-loupe" />
           <span className="typing-text">{typingText}</span>
           <span className="cursor">|</span>
         </div>
+        <div
+          className={` ${showResults ? "visible" : ""} ${
+            animating ? "fade-out-results" : ""
+          }`}
+        >
+          {/* résultats */}
+        </div>
       </div>
-
       <div
-        className={`search-results ${showResults ? "visible" : ""} ${
-          isTransitioning ? "fade-out" : ""
+        className={`search-results ${showResults ? "visible" : ""} 
         }`}
       >
         {" "}
@@ -108,6 +114,7 @@ export default function Intro({ onSelectTheme }) {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 }
