@@ -84,7 +84,7 @@
       {
         "title": "Assistante d’achats / Approvisionneuse",
         "company": "Actemium",
-        "logo": "/images/logo/LogoActemium.png",
+        "logo": "/images/logo/Actemium.svg",
         "companyUrl": "https://www.actemium.fr/",
         "lieu": "Laxou (54), FR",
         "period": "Avril 2022 - Décembre 2022",
@@ -97,7 +97,7 @@
       {
         "title": "Gestionnaire de stock",
         "company": "Gédimat",
-        "logo": "/images/logo/LogoGedimat.png",
+        "logo": "/images/logo/Gedimat.png",
         "companyUrl": "https://www.gedimat.fr/",
         "lieu": "Sorinières (44), FR",
         "period": "Octobre 2020 - Août 2021",
@@ -110,7 +110,7 @@
       {
         "title": "Approvisionneuse région",
         "company": "Point P",
-        "logo": "/images/logo/LogoPointP.png",
+        "logo": "/images/logo/PointP.png",
         "companyUrl": "https://www.pointp.fr/",
         "lieu": "Vertou (44), FR",
         "period": "Janvier 2020 - Octobre 2020",
@@ -123,7 +123,7 @@
       {
         "title": "Supply Officer A350",
         "company": "Airbus",
-        "logo": "/images/logo/LogoAirbus.png",
+        "logo": "/images/logo/Airbus.png",
         "companyUrl": "https://www.airbus.com/en",
         "lieu": "Bouguenais (44), FR",
         "period": "Novembre 2017 - Décembre 2019",
@@ -136,7 +136,7 @@
       {
         "title": "Agent logistique",
         "company": "Saint-Gobain Pam",
-        "logo": "/images/logo/LogoSG.png",
+        "logo": "/images/logo/SG.png",
         "companyUrl": "https://www.saint-gobain.com/fr/",
         "lieu": "Foug (54), FR",
         "period": "Janvier 2014 - Octobre 2017",
@@ -149,7 +149,7 @@
       {
         "title": "Chargée du service distribution",
         "company": "Primagaz",
-        "logo": "/images/logo/LogoPrimagaz.png",
+        "logo": "/images/logo/Primagaz.png",
         "companyUrl": "https://www.primagaz.fr/",
         "lieu": "Vandoeuvre (54), FR",
         "period": "Juillet 2012 - Décembre 2013",
@@ -162,7 +162,7 @@
       {
         "title": "Agent d’exploitation et service relation clientèle",
         "company": "Norbert Dentressangle Distribution",
-        "logo": "/images/logo/LogoND.svg",
+        "logo": "/images/logo/ND.svg",
         "companyUrl": "https://www.dentressangle.com/fr/",
         "lieu": "Rosières-aux-salines (54), FR",
         "period": "Septembre 2011 - Juin 2012",
@@ -186,64 +186,110 @@
       "languagesFrameworks": [
         {
           "name": "HTML",
+          "logo": "/images/logo/HTML.svg",
           "level": 95,
           "description": "Structurer et créer des interfaces accessibles et sémantiques."
         },
         {
-          "name": "CSS / SCSS / Animations",
+          "name": "CSS / Animations",
+          "logo": "/images/logo/CSS.svg",
           "level": 90,
-          "description": "Réaliser des designs modernes et interactifs avec style et fluidité."
+          "description": "Maîtrise des animations et transitions CSS pour créer des interfaces fluides, dynamiques et modernes."
         },
         {
-          "name": "SEO & Accessibilité",
+          "name": "SCSS / Animations",
+          "logo": "/images/logo/Sass.svg",
           "level": 90,
-          "description": "Optimiser la visibilité et l’expérience utilisateur pour tous."
+          "description": "Utilisation avancée de SCSS pour structurer, optimiser et animer les interfaces avec une approche modulaire et maintenable."
         },
-        {
-          "name": "API REST",
-          "level": 90,
-          "description": "Intégrer et exploiter des données avec efficacité."
-        },
+
         {
           "name": "JavaScript",
+          "logo": "/images/logo/Javascript.svg",
           "level": 90,
           "description": "Créer des fonctionnalités dynamiques et réactives."
         },
         {
-          "name": "React",
+          "name": "ReactJS",
+          "logo": "/images/logo/ReactJS.svg",
           "level": 85,
           "description": "Développer des interfaces performantes et modulaires."
         },
+
+        {
+          "name": "SEO",
+          "logo": "/images/logo/SEO.svg",
+          "level": 85,
+          "description": "Optimiser la visibilité"
+        },
+        {
+          "name": "Accessibilité",
+          "logo": "/images/logo/Accessibility.svg",
+          "level": 85,
+          "description": "Optimiser l’expérience utilisateur pour tous."
+        },
+
+        {
+          "name": "API REST",
+          "logo": "/images/logo/API.svg",
+          "level": 85,
+          "description": "Intégrer et exploiter des données avec efficacité."
+        },
         {
           "name": "Redux Toolkit",
+          "logo": "/images/logo/Redux.svg",
           "level": 75,
           "description": "Gérer l’état des applications avec rigueur et clarté."
         },
         {
           "name": "Test unitaire",
+          "logo": "/images/logo/TestUnitaire.svg",
           "level": 70,
           "description": "Assurer la fiabilité et la robustesse du code."
+        },
+        {
+          "name": "Node.js",
+          "logo": "/images/logo/Node.js.svg",
+          "level": 20,
+          "description": "Faire executer JavaScript côté serveur pour créer des applications performantes"
+        },
+        {
+          "name": "MongoDB",
+          "logo": "/images/logo/MongoDB.svg",
+          "level": 20,
+          "description": "Stocker et gérer des données de manière flexible grâce à une structure orientée documents."
         }
       ],
       "toolsEnvironment": [
-        "Git – Gestion de version efficace",
-        "GitHub – Collaboration et partage de projets",
-        "VS Code – Environnement de développement optimisé",
-        "Figma – Prototypage et design d’interface",
-        "Google Analytics – Analyse et optimisation des performances",
-        "Postman – Test et intégration d’APIs",
-        "Lighthouse – Audit et amélioration des performances web",
-        "Chrome DevTools – Débogage et optimisation avancée"
+        { "name": "Git", "logo": "/images/logo/Git.svg" },
+        { "name": "GitHub", "logo": "/images/logo/GitHub.svg" },
+        { "name": "Github Pages", "logo": "/images/logo/GithubPages.svg" },
+        { "name": "Vercel", "logo": "/images/logo/Vercel.svg" },
+        { "name": "VS Code", "logo": "/images/logo/VSCode.svg" },
+        { "name": "Figma", "logo": "/images/logo/Figma.svg" },
+        { "name": "Canva", "logo": "/images/logo/Canva.svg" },
+        { "name": "Postman", "logo": "/images/logo/Postman.svg" },
+        { "name": "Lighthouse", "logo": "/images/logo/Lighthouse.svg" },
+        {
+          "name": "Google Analytics",
+          "logo": "/images/logo/GoogleAnalytics.svg"
+        },
+        { "name": "Chrome Devtools", "logo": "/images/logo/ChromeDevtools.svg" }
       ],
       "methodologies": [
         {
-          "name": "Kanban",
-          "description": "Organiser le travail visuellement pour une progression fluide et transparente."
+          "name": "Méthode Agile",
+          "description": "Organiser le développement de façon flexible et itérative pour s’adapter rapidement aux besoins."
         },
         {
-          "name": "Agilité",
-          "description": "Collaborer et itérer rapidement pour créer de la valeur continuellement."
+          "name": "Scrum",
+          "description": "Structurer le travail en sprints pour livrer de la valeur régulièrement et de manière collaborative."
         },
+        {
+          "name": "Kanban",
+          "description": "Optimiser le flux de travail grâce à une visualisation claire des tâches et des priorités."
+        },
+
         {
           "name": "Responsive / Mobile First",
           "description": "Créer des interfaces adaptées à tous les supports et résolutions."
@@ -262,7 +308,7 @@
           "title": "Titre Professionnel Développeur Web et Web Mobile",
           "niveau": "Bac +2",
           "institution": "OpenClassrooms",
-          "logo": "/images/logo/LogoOC.png",
+          "logo": "/images/logo/OC.svg",
           "institutionUrl": "https://openclassrooms.com/",
           "lieux": "Full remote, France",
           "qualification": "Création d'applications web et mobiles, intégration, accessibilité, SEO",
@@ -273,7 +319,7 @@
           "title": "Titre Professionnel Responsable production en transport logistique",
           "niveau": "Bac +3",
           "institution": "Institut Supérieur du Transport Et de la Logistique International",
-          "logo": "/images/logo/LogoIsteli.svg",
+          "logo": "/images/logo/Isteli.png",
           "institutionUrl": "https://www.isteli.fr/",
           "lieux": "Jarville-la-Malgrange (54), France",
           "qualification": "Optimisation de la chaîne logistique et management d’équipe",
@@ -284,7 +330,7 @@
           "title": "Titre Professionnel Technicien supérieur du transport et de la logistique",
           "niveau": "Bac +3",
           "institution": "Institut Supérieur du Transport Et de la Logistique International",
-          "logo": "/images/logo/LogoIsteli.svg",
+          "logo": "/images/logo/Isteli.png",
           "institutionUrl": "https://www.isteli.fr/",
           "lieux": "Jarville-la-Malgrange (54), France",
           "qualification": "Gestion professionnelle du transport et de la logistique",

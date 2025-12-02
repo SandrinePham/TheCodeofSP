@@ -67,10 +67,24 @@
     }
   }
 
+    &__tool{
+      @media (max-width: 611px){
+        justify-content: center;
+      }
+    }
+
+
   &__item-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: f.$spacing-xs;
+  }
+
+  &__item-title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: f.$spacing-xs;
+    gap: f.$spacing-xs;
   }
 
   &__item-name {
@@ -175,6 +189,18 @@
       }
     }
   }
+}
+
+.skills__tool {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skills-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 
 /* =============================

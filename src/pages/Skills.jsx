@@ -81,7 +81,14 @@ const Skills = () => {
                   }`}
                 >
                   <div className="skills__item-header">
-                    <span className="skills__item-name">{skill.name}</span>
+                    <div className="skills__item-title">
+                      <img
+                        src={skill.logo}
+                        alt={skill.name}
+                        className="skills__item-logo skills-logo"
+                      />
+                      <span className="skills__item-name">{skill.name}</span>
+                    </div>
                     <span className="skills__item-level">{skill.level}%</span>
                   </div>
                   <div className="skills__item-bar">
@@ -98,17 +105,25 @@ const Skills = () => {
           {/* Outils & Environnement */}
           <section className="skills__section">
             <h2 className="section-title">{content?.skills?.subtitle2}</h2>
+
             <div className="skills__tools skills__row">
               {tools.map((tool, i) => (
                 <div
-                  key={tool}
-                  ref={(el) => (refs.current[languagesFrameworks.length + i] = el)}
+                  key={tool.name}
+                  ref={(el) =>
+                    (refs.current[languagesFrameworks.length + i] = el)
+                  }
                   data-index={`tool-${i}`}
                   className={`skills__tool ${
                     visible.includes(`tool-${i}`) ? "visible" : ""
                   }`}
                 >
-                  {tool}
+                  <img
+                    src={tool.logo}
+                    alt={tool.name}
+                    className="skills-logo"
+                  />
+                  <span>{tool.name}</span>
                 </div>
               ))}
             </div>
@@ -121,7 +136,11 @@ const Skills = () => {
               {methodologies.map((m, i) => (
                 <div
                   key={i}
-                  ref={(el) => (refs.current[languagesFrameworks.length + tools.length + i] = el)}
+                  ref={(el) =>
+                    (refs.current[
+                      languagesFrameworks.length + tools.length + i
+                    ] = el)
+                  }
                   data-index={`method-${i}`}
                   className={`skills__methodology ${
                     visible.includes(`method-${i}`) ? "visible" : ""
@@ -143,7 +162,14 @@ const Skills = () => {
                 return (
                   <div
                     key={i}
-                    ref={(el) => (refs.current[languagesFrameworks.length + tools.length + methodologies.length + i] = el)}
+                    ref={(el) =>
+                      (refs.current[
+                        languagesFrameworks.length +
+                          tools.length +
+                          methodologies.length +
+                          i
+                      ] = el)
+                    }
                     data-index={`diploma-${i}`}
                     className={`skills__diploma ${
                       visible.includes(`diploma-${i}`) ? "visible" : ""
