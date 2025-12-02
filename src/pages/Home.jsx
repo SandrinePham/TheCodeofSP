@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import Slogan from "../components/Slogan.jsx";
 import HighLightCard from "../components/HighlightCard.jsx";
 import useEffectContent from "../hooks/useEffectContent.js";
-import HomeAccueillant from "../assets/images/images/HomeAccueillant.webp";
-import HomeEnergique from "../assets/images/images/HomeEnergique.webp";
-import HomeMinimalism from "../assets/images/images/HomeMinimalism.webp";
-import Scotch from "../assets/images/images/Scotch.webp"; // une seule image pour tous les thèmes
+import HomeAccueillant from "/images/images/HomeAccueillant.webp";
+import HomeEnergique from "/images/images/HomeEnergique.webp";
+import HomeMinimalism from "/images/images/HomeMinimalism.webp";
+import Scotch from "/images/images/Scotch.webp";
 
 import "./home.scss";
 
@@ -33,7 +33,6 @@ const Home = ({ theme }) => {
     }
   }, []);
 
-  // Animation séquentielle : fade-in contenu puis fly-in Post-it
   useEffect(() => {
     const contentTimer = setTimeout(() => setShowContent(true), 200);
     const postItTimer = setTimeout(() => setShowPostIt(true), 1200);

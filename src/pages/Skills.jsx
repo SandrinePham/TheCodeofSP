@@ -8,7 +8,6 @@ const Skills = () => {
   const refs = useRef([]);
   const [visible, setVisible] = useState([]);
 
-  // SEO — avant les returns
   useEffect(() => {
     document.title = "Compétences — Sandrine PHAM | Développement Front-End";
 
@@ -21,7 +20,6 @@ const Skills = () => {
     }
   }, []);
 
-  // Intersection Observer pour fade-in
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

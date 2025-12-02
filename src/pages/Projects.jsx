@@ -7,12 +7,10 @@ import "./projects.scss";
 export default function Projects() {
   const { projects, loading, error } = useProjects("/data/projects.json");
 
-  // Tri du plus récent au plus ancien
   const sortedProjects = [...projects].sort((a, b) => {
     return new Date(b.date) - new Date(a.date);
   });
 
-  // SEO — ok ici (aucun return avant)
   useEffect(() => {
     document.title = "Projets — Sandrine PHAM | React & Front-End";
 

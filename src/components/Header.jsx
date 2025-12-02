@@ -1,9 +1,9 @@
 import Navbar from "./Navbar.jsx";
 import "./header.scss";
 
-import logoAccueillant from "../assets/images/logo/LogoAccueillant.svg";
-import logoMinimalism from "../assets/images/logo/LogoMinimalism.svg";
-import logoEnergique from "../assets/images/logo/LogoEnergique.svg";
+import logoAccueillant from "/images/logo/LogoAccueillant.svg";
+import logoMinimalism from "/images/logo/LogoMinimalism.svg";
+import logoEnergique from "/images/logo/LogoEnergique.svg";
 
 const logos = {
   energique: logoEnergique,

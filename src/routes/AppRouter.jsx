@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -29,7 +29,6 @@ const updateFavicon = (theme) => {
 };
 
 const AppRouter = ({ theme, setTheme, resetIntro }) => {
-  // 💡 Applique la classe du thème au body pour les styles SCSS globaux
   useEffect(() => {
     const root = document.documentElement;
 
@@ -41,8 +40,7 @@ const AppRouter = ({ theme, setTheme, resetIntro }) => {
 
     root.classList.add(`theme-${theme}`);
 
-    sessionStorage.setItem("theme", theme); // ← sauvegarde auto
-    // 🔥 Met à jour le favicon
+    sessionStorage.setItem("theme", theme);
     updateFavicon(theme);
   }, [theme]);
 
@@ -61,7 +59,6 @@ const AppRouter = ({ theme, setTheme, resetIntro }) => {
           </Routes>
         </main>
 
-        {/* Ce composant change le thème */}
         <ThemeSwitcher theme={theme} setTheme={setTheme} />
 
         <Footer />
