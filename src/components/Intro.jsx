@@ -69,7 +69,7 @@ export default function Intro({ onSelectTheme, animating }) {
               />
               <div className="result-header">
                 <span className="lien-title">Sandrine Pham</span>
-                <span className="lien">http://www.thecodeofsp.fr</span>
+                <span className="lien">http://thecodeofsp.fr</span>
               </div>
             </div>
             <p className="result-url">Portfolio version Accueillante</p>
@@ -86,7 +86,7 @@ export default function Intro({ onSelectTheme, animating }) {
               <img src={LogoEnergique} alt="logo" className="search-favicon" />
               <div className="result-header">
                 <span className="lien-title">Sandrine Pham</span>
-                <span className="lien">http://www.thecodeofsp.fr</span>
+                <span className="lien">http://thecodeofsp.fr</span>
               </div>
             </div>
             <p className="result-url">Portfolio version Énergique</p>
@@ -103,7 +103,7 @@ export default function Intro({ onSelectTheme, animating }) {
               <img src={LogoMinimalism} alt="logo" className="search-favicon" />
               <div className="result-header">
                 <span className="lien-title">Sandrine Pham</span>
-                <span className="lien">http://www.thecodeofsp.fr</span>
+                <span className="lien">http://thecodeofsp.fr</span>
               </div>
             </div>
             <p className="result-url">Portfolio version Minimaliste</p>

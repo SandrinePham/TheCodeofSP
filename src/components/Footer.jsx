@@ -27,13 +27,13 @@ const Footer = () => {
           {/* Contact */}
           <div className="footer__section footer__contact" aria-labelledby="footer-contact-title">
             <h3 id="footer-contact-title" className="footer__subtitle">
-              Contact
+              Contact: 
             </h3>
             <ul>
               <li>
                 <FaEnvelope aria-hidden="true" />
-                <a href="mailto:thecodeofsp@gmail.com">
-                  thecodeofsp@gmail.com
+                <a href="mailto:sp@thecodeofsp.fr">
+                  sp@thecodeofsp.fr
                 </a>
               </li>
             </ul>
@@ -42,7 +42,7 @@ const Footer = () => {
           {/* Réseaux sociaux */}
           <div className="footer__section footer__socials" aria-labelledby="footer-social-title">
             <h3 id="footer-social-title" className="footer__subtitle">
-              Réseaux sociaux
+              Réseaux sociaux: 
             </h3>
             <div className="footer__icons">
               <a
