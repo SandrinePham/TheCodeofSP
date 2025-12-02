@@ -60,7 +60,7 @@
     color: var(--tertiary-color);
     opacity: 0.95;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     text-align: center;
     font-family: var(--font-body);
   }
@@ -68,6 +68,8 @@
   &__subtitle {
     color: var(--background-main);
     text-align: center;
+    justify-items: center;
+
     font-family: var(--font-title);
     font-size: 1.2rem;
 
@@ -80,7 +82,7 @@
   /* --- Contenu principal --- */
   &__content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: f.$spacing-m;
@@ -88,6 +90,7 @@
     @media (max-width: f.$mobile) {
       justify-content: center;
       gap: f.$spacing-xs;
+      flex-direction: column;
     }
   }
 
