@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import "./intro.scss";
 import { FaSearch } from "react-icons/fa";
 
-import LogoEnergique from "../assets/images/logo/SPEnergique.svg";
-import LogoAccueillant from "../assets/images/logo/SPAccueillant.svg";
-import LogoMinimalism from "../assets/images/logo/SPMinimalism.svg";
+import LogoEnergique from "../../public/images/logo/SPEnergique.svg";
+import LogoAccueillant from "../../public/images/logo/SPAccueillant.svg";
+import LogoMinimalism from "../../public/images/logo/SPMinimalism.svg";
 
 export default function Intro({ onSelectTheme, animating }) {
   const [typingText, setTypingText] = useState("");
