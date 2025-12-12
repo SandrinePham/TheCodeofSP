@@ -15,16 +15,16 @@ const updateFavicon = (theme) => {
 
   switch (theme) {
     case "accueillant":
-      favicon.href = "/images/logo/SPDark.svg";
+      favicon.href = "/images/logo/SPAccueillant.svg";
       break;
     case "energique":
       favicon.href = "/images/logo/SPEnergique.svg";
       break;
     case "minimalism":
-      favicon.href = "/images/logo/SPDark.svg";
+      favicon.href = "/images/logo/SPMinimalism.svg";
       break;
     default:
-      favicon.href = "/images/logo/SPDark.svg";
+      favicon.href = "/images/logo/SPAccueillant.svg";
   }
 };
 

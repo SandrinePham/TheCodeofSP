@@ -123,7 +123,7 @@ const Skills = () => {
                     alt={tool.name}
                     className="skills-logo"
                   />
-                  <span>{tool.name}</span>
+                  <p>{tool.name}</p>
                 </div>
               ))}
             </div>
